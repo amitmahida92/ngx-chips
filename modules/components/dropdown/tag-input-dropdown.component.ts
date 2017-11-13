@@ -27,7 +27,8 @@ const defaults: Type<TagInputDropdownOptions> = forwardRef(() => OptionsProvider
 
 @Component({
     selector: 'tag-input-dropdown',
-    templateUrl: './tag-input-dropdown.template.html'
+    templateUrl: './tag-input-dropdown.template.html',
+    styleUrls: ['./tag-input-dropdown.css']
 })
 export class TagInputDropdown {
     /**
@@ -150,12 +151,13 @@ export class TagInputDropdown {
         return items.map((item: TagModel) => {
             return typeof item === 'string' ? {
                 [this.displayBy]: item,
-                [this.identifyBy]: item
+                [this.identifyBy]: item,
+                checked: false
             } : item;
         });
     }
 
-    constructor(private readonly injector: Injector) {}
+    constructor(private readonly injector: Injector) { }
 
     /**
      * @name ngOnInit
@@ -164,7 +166,7 @@ export class TagInputDropdown {
         this.onItemClicked().subscribe(this.requestAdding);
 
         // reset itemsMatching array when the dropdown is hidden
-        this.onHide().subscribe(this.resetItems);
+        // this.onHide().subscribe(this.resetItems);
 
         const DEBOUNCE_TIME = 200;
 
@@ -175,7 +177,6 @@ export class TagInputDropdown {
                 if (this.keepOpen === false) {
                     return value.length > 0;
                 }
-
                 return true;
             })
             .subscribe(this.show);
@@ -252,15 +253,25 @@ export class TagInputDropdown {
         }
 
         if (!this.showDropdownIfEmpty && !value) {
-            return this.dropdown.hide();
+            // return this.dropdown.hide();
         }
 
+        if (this.tagInput.tags.length > 0) {
+            this.tagInput.tags.forEach((tag, index) => {
+                if (tag.model['checked'] == true) {
+                    const checkedItem: any = items.find(x => {
+                        return x['value'] == tag.model['value'];
+                    });
+                    items[items.indexOf(checkedItem)]['checked'] = true;
+                }
+            });
+        }
         this.setItems(items);
 
         if (shouldShow) {
             this.dropdown.show(position);
         } else if (shouldHide) {
-            this.hide();
+            // this.hide();
         }
     }
 
@@ -342,16 +353,17 @@ export class TagInputDropdown {
 
         const dupesAllowed = this.tagInput.allowDupes;
 
-        return this.autocompleteItems.filter((item: TagModel) => {
-            const hasValue: boolean = dupesAllowed ? true : this.tagInput.tags.some(tag => {
-                const identifyBy = this.tagInput.identifyBy;
-                const model = typeof tag.model === 'string' ? tag.model : tag.model[identifyBy];
+        return this.autocompleteItems
+            .filter((item: TagModel) => {
+                const hasValue: boolean = dupesAllowed ? true : this.tagInput.tags.some(tag => {
+                    const identifyBy = this.tagInput.identifyBy;
 
-                return model === item[this.identifyBy];
+                    const model = typeof tag.model === 'string' ? tag.model : tag.model[identifyBy];
+
+                    return model === item[this.identifyBy];
+                });
+                return this.matchingFn(value, item); // && hasValue === false
             });
-
-            return this.matchingFn(value, item) && hasValue === false;
-        });
     }
 
     /**
@@ -401,7 +413,7 @@ export class TagInputDropdown {
             if (this.items.length) {
                 this.dropdown.show(this.calculatePosition());
             } else if (!this.showDropdownIfEmpty && this.isVisible) {
-                this.dropdown.hide();
+                // this.dropdown.hide();
             }
         };
 
@@ -420,4 +432,10 @@ export class TagInputDropdown {
 
         return this;
     }
+
+    onItemChecked(event) {
+        event.value.checked = !event.value.checked;
+    }
+
+
 }

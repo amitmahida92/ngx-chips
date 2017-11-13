@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Http, Response } from '@angular/http';
@@ -23,23 +23,24 @@ export class Home {
 
     disabled = true;
 
+    items2;
     items = ['Javascript', 'Typescript'];
 
     inputText = 'text';
 
-    itemsAsObjects = [{id: 0, name: 'Angular', readonly: true}, {id: 1, name: 'React'}];
+    itemsAsObjects = [{ id: 0, name: 'Angular', readonly: true }, { id: 1, name: 'React' }];
 
     autocompleteItems = ['Item1', 'item2', 'item3'];
 
     autocompleteItemsAsObjects = [
-        {value: 'Item1', id: 0, extra: 0},
-        {value: 'item2', id: 1, extra: 1},
+        { value: 'Item1', id: 0, extra: 0 },
+        { value: 'item2', id: 1, extra: 1 },
         'item3'
     ];
 
     dragAndDropExample = ['C#', 'Java'];
 
-    dragAndDropObjects = [{display: 'Javascript', value: 'Javascript'}, {display: 'Typescript', value: 'Typescript'}];
+    dragAndDropObjects = [{ display: 'Javascript', value: 'Javascript' }, { display: 'Typescript', value: 'Typescript' }];
     dragAndDropStrings = ['CoffeScript', 'Scala.js'];
 
     public requestAutocompleteItems = (text: string): Observable<Response> => {
@@ -93,7 +94,7 @@ export class Home {
     }
 
     public transform(value: string): Observable<object> {
-        const item = {display: `@${value}`, value: `@${value}`};
+        const item = { display: `@${value}`, value: `@${value}` };
         return Observable.of(item);
     }
 
@@ -123,7 +124,7 @@ export class Home {
             const result: any = isNaN(value) ? {
                 isNan: true
             } : null;
-  
+
             setTimeout(() => {
                 resolve(result);
             }, 1);
@@ -162,5 +163,9 @@ export class Home {
         return Observable
             .of(tag)
             .filter(() => confirm);
+    }
+
+    removeItem(item) {
+        this.items2.splice(item, 1);
     }
 }

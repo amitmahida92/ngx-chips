@@ -75,6 +75,9 @@ const defaults: Type<TagInputOptions> = forwardRef(() => OptionsProvider.default
     animations
 })
 export class TagInputComponent extends TagInputAccessor implements OnInit, AfterViewInit {
+
+    @Input() displayInlineTags = true;
+
     /**
      * @name separatorKeys
      * @desc keyboard keys with which a user can separate items
@@ -422,11 +425,11 @@ export class TagInputComponent extends TagInputAccessor implements OnInit, After
      */
     public animationMetadata: { value: string, params: object };
 
-    constructor(private readonly renderer: Renderer2, 
-                public readonly dragProvider: DragProvider) {
+    constructor(private readonly renderer: Renderer2,
+        public readonly dragProvider: DragProvider) {
         super();
     }
-    
+
     /**
      * @name ngAfterViewInit
      */
@@ -473,9 +476,9 @@ export class TagInputComponent extends TagInputAccessor implements OnInit, After
             console.warn(constants.MAX_ITEMS_WARNING);
         }
 
-	    // Setting editable to false to fix problem with tags in IE still being editable when
-	    // onlyFromAutocomplete is true
-		this.editable = this.onlyFromAutocomplete ? false : this.editable;
+        // Setting editable to false to fix problem with tags in IE still being editable when
+        // onlyFromAutocomplete is true
+        this.editable = this.onlyFromAutocomplete ? false : this.editable;
 
         this.setAnimationMetadata();
     }
@@ -506,7 +509,7 @@ export class TagInputComponent extends TagInputAccessor implements OnInit, After
 
         const subscribeFn = (model: TagModel) => {
             return this.addItem(fromAutocomplete, model, index);
-        }
+        };
 
         this.onAdding ?
             this.onAdding(tag)
@@ -616,7 +619,7 @@ export class TagInputComponent extends TagInputAccessor implements OnInit, After
      */
     public setInputValue(value: string): void {
         const control = this.getControl();
-        
+
         // update form value with the transformed item
         control.setValue(value);
     }
@@ -713,10 +716,10 @@ export class TagInputComponent extends TagInputAccessor implements OnInit, After
         event.stopPropagation();
 
         const item = { zone: this.dragZone, tag, index } as DraggedTag;
-        
+
         this.dragProvider.setSender(this);
         this.dragProvider.setDraggedItem(event, item);
-        this.dragProvider.setState({dragging: true, index});
+        this.dragProvider.setState({ dragging: true, index });
     }
 
     /**
@@ -724,7 +727,7 @@ export class TagInputComponent extends TagInputAccessor implements OnInit, After
      * @param event
      */
     public onDragOver(event: DragEvent, index?: number): void {
-        this.dragProvider.setState({dropping: true});
+        this.dragProvider.setState({ dropping: true });
         this.dragProvider.setReceiver(this);
 
         event.preventDefault();
@@ -741,9 +744,9 @@ export class TagInputComponent extends TagInputAccessor implements OnInit, After
         if (item.zone !== this.dragZone) {
             return;
         }
-        
+
         this.dragProvider.onTagDropped(item.tag, item.index, index);
-    
+
         event.preventDefault();
         event.stopPropagation();
     }
@@ -793,8 +796,8 @@ export class TagInputComponent extends TagInputAccessor implements OnInit, After
 
         // if so, give a visual cue and return false
         if (!this.allowDupes && dupe && this.blinkIfDupe) {
-            const model = this.tags.find(tag => {
-                return this.getItemValue(tag.model) === this.getItemValue(dupe);
+            const model = this.tags.find(intag => {
+                return this.getItemValue(intag.model) === this.getItemValue(dupe);
             });
 
             if (model) {
@@ -820,13 +823,13 @@ export class TagInputComponent extends TagInputAccessor implements OnInit, After
 
     /**
      * @name moveToTag
-     * @param item 
-     * @param direction 
+     * @param item
+     * @param direction
      */
     private moveToTag(item: TagModel, direction: string): void {
         const isLast = this.tags.last.model === item;
         const isFirst = this.tags.first.model === item;
-        const stopSwitch = (direction === constants.NEXT && isLast) || 
+        const stopSwitch = (direction === constants.NEXT && isLast) ||
             (direction === constants.PREV && isFirst);
 
         if (stopSwitch) {
@@ -848,7 +851,7 @@ export class TagInputComponent extends TagInputAccessor implements OnInit, After
     private getTagIndex(item: TagModel): number {
         const tags = this.tags.toArray();
 
-        return tags.findIndex(tag => tag.model === item);        
+        return tags.findIndex(tag => tag.model === item);
     }
 
     /**
@@ -890,13 +893,19 @@ export class TagInputComponent extends TagInputAccessor implements OnInit, After
      */
     private addItem(fromAutocomplete = false, item: TagModel, index?: number): void {
         const model = this.getItemDisplay(item);
-        
+        const indexOfModel = this.items.find(x => x['value'] == model);
+
+        if (indexOfModel != undefined) {
+            this.removeItem(item, this.items.indexOf(indexOfModel));
+            return;
+        }
+
         /**
          * @name reset
          */
         const reset = (): void => {
             // reset control and focus input
-            this.setInputValue('');
+            this.setInputValue(this.inputTextValue);
 
             // focus input
             this.focus(true, false);
@@ -923,7 +932,8 @@ export class TagInputComponent extends TagInputAccessor implements OnInit, After
          */
         const subscribeFn = (tag: TagModel): void => {
             this.appendTag(tag, index);
-            
+
+
             // emit event
             this.onAdd.emit(tag);
 
@@ -931,8 +941,8 @@ export class TagInputComponent extends TagInputAccessor implements OnInit, After
                 return;
             }
 
-            this.dropdown.hide();
-            this.dropdown.showDropdownIfEmpty ? this.dropdown.show() : undefined;
+            // this.dropdown.hide();
+            // this.dropdown.showDropdownIfEmpty ? this.dropdown.show() : undefined;
         };
 
         Observable
@@ -1030,7 +1040,6 @@ export class TagInputComponent extends TagInputAccessor implements OnInit, After
                 if (this.addOnBlur) {
                     this.onAddingRequested(false, this.formValue);
                 }
-
                 this.setInputValue('');
             });
     }
@@ -1070,7 +1079,7 @@ export class TagInputComponent extends TagInputAccessor implements OnInit, After
     private setAnimationMetadata(): void {
         this.animationMetadata = {
             value: 'in',
-            params: {...this.animationDuration}
+            params: { ...this.animationDuration }
         };
     }
 }

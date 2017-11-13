@@ -76,6 +76,7 @@
     "zone.js": "0.8.10"
   },
   "dependencies": {
+    "materialize-css": "^0.100.2",
     "ng2-material-dropdown": "0.7.7"
   },
   "peerDependencies": {
