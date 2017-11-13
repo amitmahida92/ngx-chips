@@ -6,6 +6,7 @@ import {
     TemplateRef,
     ElementRef,
     HostListener,
+    HostBinding,
     ViewChild,
     ChangeDetectorRef,
     Renderer2
@@ -122,6 +123,12 @@ export class TagComponent {
     public editing = false;
 
     /**
+     * @name moving
+     * @type {boolean}
+     */
+    @HostBinding('class.moving') public moving: boolean;
+
+    /**
      * @name rippleState
      * @type {string}
      */
@@ -168,6 +175,10 @@ export class TagComponent {
         this.element.nativeElement.focus();
     }
 
+    public move(): void {
+        this.moving = true;
+    }
+
     /**
      * @name keydown
      * @param event
@@ -196,7 +207,9 @@ export class TagComponent {
      * @name toggleEditMode
      */
     public toggleEditMode(): void {
-        this.editing ? this.disableEditMode() : this.activateEditMode();
+        if (this.editable) {
+            this.editing ? undefined : this.activateEditMode();
+        }
     }
 
     /**
@@ -206,15 +219,17 @@ export class TagComponent {
     public onBlurred(event: any): void {
         // Checks if it is editable first before handeling the onBlurred event in order to prevent
         // a bug in IE where tags are still editable with onlyFromAutocomplete set to true
-		if (this.editable) {
-			const newValue: string = event.target.innerText;
-			const result = typeof this.model === 'string' ? newValue :
-				{[this.identifyBy]: newValue, [this.displayBy]: newValue};
-
-            this.toggleEditMode();
-
-            this.onBlur.emit(result);
+		if (!this.editable) {
+			return;
 		}
+
+        const value: string = event.target.innerText;
+        const result = typeof this.model === 'string' ? value :
+            {[this.identifyBy]: value, [this.displayBy]: value};
+
+        this.disableEditMode();
+
+        this.onBlur.emit(result);
     }
 
     /**
@@ -267,7 +282,7 @@ export class TagComponent {
         const classList = this.element.nativeElement.classList;
         classList.add('tag--editing');
 
-         this.editing = true;
+        this.editing = true;
     }
 
     /**

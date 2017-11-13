@@ -1,58 +1,60 @@
+import { AnimationEntryMetadata } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { ValidatorFn, AsyncValidatorFn } from '@angular/forms';
 
-import { 
-    SECONDARY_PLACEHOLDER,
-    PLACEHOLDER
- } from './core/constants';
-
+import { SECONDARY_PLACEHOLDER, PLACEHOLDER } from './core/constants';
 import { TagInputDropdown } from './components/dropdown/tag-input-dropdown.component';
 import { TagModel } from './core';
 
 export interface TagInputOptions {
-    separatorKeys: string[],
-    separatorKeyCodes: number[],
-    maxItems: number,
-    placeholder: string,
-    secondaryPlaceholder: string,
-    validators: ValidatorFn[],
-    asyncValidators: AsyncValidatorFn[],
-    onlyFromAutocomplete: boolean,
-    errorMessages: { [key: string]: string; },
-    theme: string,
-    onTextChangeDebounce: number,
-    inputId: string,
-    inputClass: string,
-    clearOnBlur: boolean,
-    hideForm: boolean,
-    addOnBlur: boolean,
-    addOnPaste: boolean,
-    pasteSplitPattern: string,
-    blinkIfDupe: boolean,
-    removable: boolean,
-    editable: boolean,
-    allowDupes: boolean,
-    modelAsStrings: boolean,
-    trimTags: boolean,
-    ripple: boolean,
-    tabIndex: string,
-    disabled: boolean,
-    dragZone: string,
-    onRemoving: () => Observable<TagModel>,
-    onAdding: () => Observable<TagModel>,
-    displayBy: string,
-    identifyBy: string
+    separatorKeys: string[];
+    separatorKeyCodes: number[];
+    maxItems: number;
+    placeholder: string;
+    secondaryPlaceholder: string;
+    validators: ValidatorFn[];
+    asyncValidators: AsyncValidatorFn[];
+    onlyFromAutocomplete: boolean;
+    errorMessages: { [key: string]: string; };
+    theme: string;
+    onTextChangeDebounce: number;
+    inputId: string;
+    inputClass: string;
+    clearOnBlur: boolean;
+    hideForm: boolean;
+    addOnBlur: boolean;
+    addOnPaste: boolean;
+    pasteSplitPattern: string;
+    blinkIfDupe: boolean;
+    removable: boolean;
+    editable: boolean;
+    allowDupes: boolean;
+    modelAsStrings: boolean;
+    trimTags: boolean;
+    ripple: boolean;
+    tabIndex: string;
+    disable: boolean;
+    dragZone: string;
+    onRemoving?: (tag: TagModel) => Observable<TagModel>;
+    onAdding?: (tag: TagModel) => Observable<TagModel>;
+    displayBy: string;
+    identifyBy: string;
+    animationDuration: {
+        enter: string,
+        leave: string
+    };
 }
 
 export interface TagInputDropdownOptions {
-    displayBy: string,
-    identifyBy: string,
-    appendToBody: boolean,
-    offset: string,
-    focusFirstElement: boolean,
-    showDropdownIfEmpty: boolean,
-    minimumTextLength: number,
-    limitItemsTo: number,
+    displayBy: string;
+    identifyBy: string;
+    appendToBody: boolean;
+    offset: string;
+    focusFirstElement: boolean;
+    showDropdownIfEmpty: boolean;
+    minimumTextLength: number;
+    limitItemsTo: number;
+    keepOpen: boolean;
     matchingFn: (value: string, target: TagModel) => boolean;
 }
 
@@ -60,7 +62,7 @@ export const defaults = {
     tagInput: <TagInputOptions>{
         separatorKeys: [],
         separatorKeyCodes: [],
-        maxItems: undefined,
+        maxItems: Infinity,
         placeholder: PLACEHOLDER,
         secondaryPlaceholder: SECONDARY_PLACEHOLDER,
         validators: [],
@@ -69,27 +71,31 @@ export const defaults = {
         errorMessages: {},
         theme: '',
         onTextChangeDebounce: 250,
-        inputId: undefined,
-        inputClass: undefined,
-        clearOnBlur: undefined,
-        hideForm: undefined,
-        addOnBlur: undefined,
-        addOnPaste: undefined,
+        inputId: '',
+        inputClass: '',
+        clearOnBlur: false,
+        hideForm: false,
+        addOnBlur: false,
+        addOnPaste: false,
         pasteSplitPattern: ',',
         blinkIfDupe: true,
         removable: true,
-        editable: undefined,
+        editable: false,
         allowDupes: false,
         modelAsStrings: false,
         trimTags: true,
         ripple: true,
-        tabIndex: undefined,
-        disabled: false,
-        dragZone: undefined,
+        tabIndex: '',
+        disable: false,
+        dragZone: '',
         onRemoving: undefined,
         onAdding: undefined,
         displayBy: 'display',
-        identifyBy: 'value'
+        identifyBy: 'value',
+        animationDuration: {
+            enter: "250ms",
+            leave: "150ms"
+        }
     },
     dropdown: <TagInputDropdownOptions>{
         displayBy: 'display',
@@ -99,13 +105,22 @@ export const defaults = {
         focusFirstElement: false,
         showDropdownIfEmpty: false,
         minimumTextLength: 1,
-        limitItemsTo: undefined,
-        matchingFn: function(this: TagInputDropdown, value: string, target: TagModel): boolean {
-            const targetValue = target[this.displayBy].toString();
-
-            return targetValue && targetValue
-                .toLowerCase()
-                .indexOf(value.toLowerCase()) >= 0;
-        }
+        limitItemsTo: Infinity,
+        keepOpen: true,
+        matchingFn
     }
 };
+
+/**
+ * @name matchingFn
+ * @param this 
+ * @param value 
+ * @param target 
+ */
+function matchingFn(this: TagInputDropdown, value: string, target: TagModel): boolean {
+    const targetValue = target[this.displayBy].toString();
+
+    return targetValue && targetValue
+        .toLowerCase()
+        .indexOf(value.toLowerCase()) >= 0;
+}

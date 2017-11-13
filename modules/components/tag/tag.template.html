@@ -1,5 +1,5 @@
 <div (click)="select($event)"
-     (dblclick)="editable ? toggleEditMode() : null"
+     (dblclick)="toggleEditMode()"
      (mousedown)="rippleState='clicked'"
      (mouseup)="rippleState='none'"
      [ngSwitch]="!!template"
@@ -10,7 +10,7 @@
     <div *ngSwitchCase="true" [attr.contenteditable]="editing">
         <!-- CUSTOM TEMPLATE -->
         <ng-template
-            [ngOutletContext]="{ item: model, index: index }"
+            [ngTemplateOutletContext]="{ item: model, index: index }"
             [ngTemplateOutlet]="template">
         </ng-template>
     </div>

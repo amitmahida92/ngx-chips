@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 
-import { FormControl } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 
@@ -13,7 +13,14 @@ import 'rxjs/add/operator/filter';
     templateUrl: './home.html'
 })
 export class Home {
-    constructor(private http: Http) {}
+    form: FormGroup;
+
+    constructor(private http: Http) {
+        this.form = new FormBuilder().group({
+            chips: [['chip'], []]
+        });
+    }
+
     disabled = true;
 
     items = ['Javascript', 'Typescript'];
@@ -110,10 +117,10 @@ export class Home {
         return null;
     }
 
-    private validateAsync(control: FormControl) {
+    private validateAsync(control: FormControl): Promise<any> {
         return new Promise(resolve => {
             const value = control.value;
-            const result = isNaN(value) ? {
+            const result: any = isNaN(value) ? {
                 isNan: true
             } : null;
   
