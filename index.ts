@@ -1,1 +1,1 @@
-export * from './dist/modules/index';
+export * from './modules/index';
