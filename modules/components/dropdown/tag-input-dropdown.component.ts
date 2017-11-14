@@ -28,7 +28,7 @@ const defaults: Type<TagInputDropdownOptions> = forwardRef(() => OptionsProvider
 @Component({
     selector: 'tag-input-dropdown',
     templateUrl: './tag-input-dropdown.template.html',
-    styleUrls: ['./tag-input-dropdown.css']
+    styleUrls: ['./tag-input-dropdown.scss']
 })
 export class TagInputDropdown {
     /**

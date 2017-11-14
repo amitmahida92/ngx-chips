@@ -11,9 +11,12 @@
         "test": "karma start karma.conf.js",
         "tsc": "tsc -p tsconfig.json",
         "ngc": "ngc -p ./tsconfig.aot.json",
-        "moveassets": "rsync -a --include='*.scss' --include='*.html' --include='*.metadata.json' --include='*/' --exclude='*' modules/ dist/modules/",
+        "moveassets": "npm run movecss && npm run movehtml",
+        "movecss": "cpy modules/**/*.scss dist --parents",
+        "movehtml": "cpy modules/**/*.html dist --parents",
+        "movemetadata": "cpy modules/**/*.metadata.json dist --parents",
         "codecov": "codecov",
-        "clean": "rm -rf ./dist && rm -rf ./factories",
+        "clean": "rmdir /Q dist && rmdir /Q factories",
         "clean:generated": "find modules \\( -name '*.js' -o -name '*.d.ts' -o -name '*.js.map' -o -name '*.metadata.json'  \\) -type f -delete"
     },
     "author": {
