@@ -15,7 +15,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { Component, ContentChildren, forwardRef, HostListener, Injector, Input, QueryList, TemplateRef, ViewChild, } from '@angular/core';
+import { Component, ContentChildren, forwardRef, HostListener, Injector, Input, QueryList, TemplateRef, ViewChild, ViewEncapsulation } from '@angular/core';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/first';
@@ -302,7 +302,8 @@ TagInputDropdown = __decorate([
     Component({
         selector: 'tag-input-dropdown',
         templateUrl: './tag-input-dropdown.template.html',
-        styleUrls: ['./tag-input-dropdown.scss']
+        styleUrls: ['./tag-input-dropdown.scss'],
+        encapsulation: ViewEncapsulation.None
     }),
     __metadata("design:paramtypes", [Injector])
 ], TagInputDropdown);

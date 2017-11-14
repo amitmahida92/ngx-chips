@@ -3,7 +3,7 @@
     "version": "1.4.2-beta",
     "description": "Tag Input component for Angular",
     "scripts": {
-        "prepublish": "npm run clean && npm run build",
+        "prepublish": "npm run build",
         "build": "npm run clean && webpack && npm run tsc && npm run ngc && npm run moveassets",
         "watch": "webpack -- --watch",
         "server": "webpack-dev-server --config webpack.demo.js --inline --colors --progress --port 3010 --content-base demo",
@@ -16,7 +16,7 @@
         "movehtml": "cpy modules/**/*.html dist --parents",
         "movemetadata": "cpy modules/**/*.metadata.json dist --parents",
         "codecov": "codecov",
-        "clean": "rmdir /Q /S dist && rmdir /Q /S factories",
+        "clean": "if exist rmdir /S /Q dist && if exist rmdir /S /Q factories",
         "clean:generated": "find modules \\( -name '*.js' -o -name '*.d.ts' -o -name '*.js.map' -o -name '*.metadata.json'  \\) -type f -delete"
     },
     "author": {
