@@ -1534,8 +1534,7 @@ TagInputDropdown = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'tag-input-dropdown',
         template: __webpack_require__(50),
-        styles: [__webpack_require__(78)],
-        encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewEncapsulation"].None
+        styles: [__webpack_require__(78)]
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injector"]])
 ], TagInputDropdown);
@@ -3165,7 +3164,7 @@ exports = module.exports = __webpack_require__(2)(undefined);
 
 
 // module
-exports.push([module.i, ".styled-checkbox {\n  position: absolute;\n  opacity: 0; }\n\n.styled-checkbox + label {\n  position: relative;\n  cursor: pointer;\n  padding: 0;\n  font-size: 16px;\n  line-height: 30px; }\n\n.styled-checkbox + label:before {\n  content: '';\n  margin-right: 10px;\n  display: inline-block;\n  vertical-align: text-top;\n  width: 20px;\n  height: 20px;\n  background: white;\n  border: 1px solid lightgray; }\n\n.styled-checkbox:hover + label:before {\n  background: #2e62a4; }\n\n.styled-checkbox:focus + label:before {\n  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12); }\n\n.styled-checkbox:checked + label:before {\n  background: #2e62a4; }\n\n.styled-checkbox:disabled + label {\n  color: #b8b8b8;\n  cursor: auto; }\n\n.styled-checkbox:disabled + label:before {\n  box-shadow: none;\n  background: #ddd; }\n\n.styled-checkbox:checked + label:after {\n  content: '';\n  position: absolute;\n  left: 6px;\n  top: 10px;\n  background: white;\n  width: 2px;\n  height: 2px;\n  box-shadow: 2px 0 0 white, 4px 0 0 white, 4px -2px 0 white, 4px -4px 0 white, 4px -6px 0 white, 4px -8px 0 white;\n  -webkit-transform: rotate(45deg);\n  transform: rotate(45deg); }\n\n.ng2-menu-item {\n  padding: 0.2em 1rem !important; }\n", ""]);
+exports.push([module.i, ".styled-checkbox {\n  position: absolute;\n  opacity: 0; }\n\n.styled-checkbox + span {\n  position: relative;\n  cursor: pointer;\n  padding: 0;\n  font-size: 16px;\n  line-height: 30px; }\n\n.styled-checkbox + span:before {\n  content: '';\n  margin-right: 10px;\n  display: inline-block;\n  vertical-align: text-top;\n  width: 20px;\n  height: 20px;\n  background: white;\n  border: 1px solid lightgray; }\n\n.styled-checkbox:hover + span:before {\n  background: #2e62a4; }\n\n.styled-checkbox:focus + span:before {\n  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12); }\n\n.styled-checkbox:checked + span:before {\n  background: #2e62a4; }\n\n.styled-checkbox:disabled + span {\n  color: #b8b8b8;\n  cursor: auto; }\n\n.styled-checkbox:disabled + span:before {\n  box-shadow: none;\n  background: #ddd; }\n\n.styled-checkbox:checked + span:after {\n  content: '';\n  position: absolute;\n  left: 6px;\n  top: 10px;\n  background: white;\n  width: 2px;\n  height: 2px;\n  box-shadow: 2px 0 0 white, 4px 0 0 white, 4px -2px 0 white, 4px -4px 0 white, 4px -6px 0 white, 4px -8px 0 white;\n  -webkit-transform: rotate(45deg);\n  transform: rotate(45deg); }\n\n.ng2-menu-item {\n  padding: 0.2em 1rem !important; }\n", ""]);
 
 // exports
 
@@ -3230,7 +3229,7 @@ exports.push([module.i, ":host,\n:host > div,\n:host > div:focus {\n  outline: 0
 /* 50 */
 /***/ (function(module, exports) {
 
-module.exports = "<ng2-dropdown (onItemClicked)=\"onItemChecked($event)\">\r\n    <ng2-dropdown-menu [focusFirstElement]=\"focusFirstElement\" [appendToBody]=\"appendToBody\" [offset]=\"offset\">\r\n        <ng2-menu-item [preventClose]=\"true\" *ngFor=\"let item of items; let index = index; let last = last\" [value]=\"item\" [ngSwitch]=\"!!templates.length\">\r\n            <input class=\"styled-checkbox\" type=\"checkbox\" name=\"item[displayBy]\" [(ngModel)]=\"item.checked\">\r\n            <label *ngSwitchCase=\"false\" [innerHTML]=\"item[displayBy] | highlight : tagInput.inputForm.value.value\">\r\n            </label>\r\n            <ng-template *ngSwitchDefault [ngTemplateOutlet]=\"templates.first\" [ngTemplateOutletContext]=\"{ item: item, index: index, last: last }\">\r\n            </ng-template>\r\n        </ng2-menu-item>\r\n    </ng2-dropdown-menu>\r\n</ng2-dropdown>\r\n";
+module.exports = "<ng2-dropdown (onItemClicked)=\"onItemChecked($event)\">\r\n    <ng2-dropdown-menu [focusFirstElement]=\"focusFirstElement\" [appendToBody]=\"appendToBody\" [offset]=\"offset\">\r\n        <ng2-menu-item [preventClose]=\"true\" *ngFor=\"let item of items; let index = index; let last = last\" [value]=\"item\" [ngSwitch]=\"!!templates.length\">\r\n            <input class=\"styled-checkbox\" type=\"checkbox\" name=\"item[displayBy]\" [(ngModel)]=\"item.checked\">\r\n            <span *ngSwitchCase=\"false\" [innerHTML]=\"item[displayBy] | highlight : tagInput.inputForm.value.value\">\r\n            </span>\r\n            <ng-template *ngSwitchDefault [ngTemplateOutlet]=\"templates.first\" [ngTemplateOutletContext]=\"{ item: item, index: index, last: last }\">\r\n            </ng-template>\r\n        </ng2-menu-item>\r\n    </ng2-dropdown-menu>\r\n</ng2-dropdown>\r\n";
 
 /***/ }),
 /* 51 */

@@ -9,8 +9,7 @@ import {
     QueryList,
     TemplateRef,
     Type,
-    ViewChild,
-    ViewEncapsulation
+    ViewChild
 } from '@angular/core';
 
 // rx
@@ -29,8 +28,7 @@ const defaults: Type<TagInputDropdownOptions> = forwardRef(() => OptionsProvider
 @Component({
     selector: 'tag-input-dropdown',
     templateUrl: './tag-input-dropdown.template.html',
-    styleUrls: ['./tag-input-dropdown.scss'],
-    encapsulation: ViewEncapsulation.None
+    styleUrls: ['./tag-input-dropdown.scss']
 })
 export class TagInputDropdown {
     /**
