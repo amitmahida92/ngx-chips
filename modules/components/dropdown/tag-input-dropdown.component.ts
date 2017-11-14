@@ -20,8 +20,8 @@ import 'rxjs/add/operator/first';
 import 'rxjs/add/operator/debounceTime';
 
 import { Ng2Dropdown, Ng2MenuItem } from 'ng2-material-dropdown';
-import { TagModel, TagInputDropdownOptions, OptionsProvider } from 'core';
-import { TagInputComponent } from 'components';
+import { TagModel, TagInputDropdownOptions, OptionsProvider } from '../../core';
+import { TagInputComponent } from '../../components';
 
 const defaults: Type<TagInputDropdownOptions> = forwardRef(() => OptionsProvider.defaults.dropdown);
 

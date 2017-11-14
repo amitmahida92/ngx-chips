@@ -8,7 +8,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { Component, Input, Output, EventEmitter, TemplateRef, ElementRef, HostListener, HostBinding, ViewChild, ChangeDetectorRef, Renderer2 } from '@angular/core';
-import { TagRipple } from 'tag';
+import { TagRipple } from '../tag';
 var KeyboardEvent = global.KeyboardEvent;
 var MouseEvent = global.MouseEvent;
 var navigator = typeof window !== 'undefined' ? window.navigator : {

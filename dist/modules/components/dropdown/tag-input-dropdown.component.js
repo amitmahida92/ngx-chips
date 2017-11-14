@@ -21,8 +21,8 @@ import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/first';
 import 'rxjs/add/operator/debounceTime';
 import { Ng2Dropdown } from 'ng2-material-dropdown';
-import { OptionsProvider } from 'core';
-import { TagInputComponent } from 'components';
+import { OptionsProvider } from '../../core';
+import { TagInputComponent } from '../../components';
 var defaults = forwardRef(function () { return OptionsProvider.defaults.dropdown; });
 var TagInputDropdown = (function () {
     function TagInputDropdown(injector) {

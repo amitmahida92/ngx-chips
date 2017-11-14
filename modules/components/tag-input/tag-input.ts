@@ -38,20 +38,20 @@ import {
     TagModel,
     listen,
     constants
-} from 'core';
+} from '../../core';
 
 import {
     DragProvider,
     DraggedTag,
     OptionsProvider,
     TagInputOptions
-} from 'core';
+} from '../../core/providers';
 
 import {
     TagInputForm,
     TagInputDropdown,
     TagComponent
-} from 'components';
+} from '../../components';
 
 import { animations } from './animations';
 

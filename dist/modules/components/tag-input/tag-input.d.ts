@@ -5,9 +5,9 @@ import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/map';
-import { TagInputAccessor, TagModel } from 'core';
-import { DragProvider } from 'core';
-import { TagInputForm, TagInputDropdown, TagComponent } from 'components';
+import { TagInputAccessor, TagModel } from '../../core';
+import { DragProvider } from '../../core/providers';
+import { TagInputForm, TagInputDropdown, TagComponent } from '../../components';
 export declare class TagInputComponent extends TagInputAccessor implements OnInit, AfterViewInit {
     private readonly renderer;
     readonly dragProvider: DragProvider;
