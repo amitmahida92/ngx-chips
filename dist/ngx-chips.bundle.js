@@ -1301,7 +1301,9 @@ var TagInputDropdown = (function () {
                         var checkedItem = items.find(function (x) {
                             return x[_this.displayBy] == tag.model[_this.displayBy];
                         });
-                        items[items.indexOf(checkedItem)]['checked'] = true;
+                        if (checkedItem !== undefined) {
+                            items[items.indexOf(checkedItem)]['checked'] = true;
+                        }
                     }
                 });
             }
@@ -1367,9 +1369,9 @@ var TagInputDropdown = (function () {
     TagInputDropdown.prototype.ngOnInit = function () {
         var _this = this;
         this.onItemClicked().subscribe(this.requestAdding);
+        this.onHide().subscribe(this.resetItems);
         var DEBOUNCE_TIME = 200;
-        this.tagInput
-            .onTextChange
+        this.tagInput.onTextChange
             .debounceTime(DEBOUNCE_TIME)
             .filter(function (value) {
             if (_this.keepOpen === false) {
@@ -1391,6 +1393,7 @@ var TagInputDropdown = (function () {
         configurable: true
     });
     TagInputDropdown.prototype.onHide = function () {
+        this.tagInput.inputText = '';
         return this.dropdown.onHide;
     };
     TagInputDropdown.prototype.onItemClicked = function () {
@@ -3243,7 +3246,7 @@ exports.push([module.i, ":host,\n:host > div,\n:host > div:focus {\n  outline: 0
 /* 50 */
 /***/ (function(module, exports) {
 
-module.exports = "<ng2-dropdown (onItemClicked)=\"onItemChecked($event)\">\r\n    <ng2-dropdown-menu [focusFirstElement]=\"focusFirstElement\" [appendToBody]=\"appendToBody\" [offset]=\"offset\">\r\n        <ng2-menu-item [preventClose]=\"true\" *ngFor=\"let item of items; let index = index; let last = last\" [value]=\"item\" [ngSwitch]=\"!!templates.length\">\r\n            <input class=\"styled-checkbox\" type=\"checkbox\" name=\"item[displayBy]\" [(ngModel)]=\"item.checked\">\r\n            <span *ngSwitchCase=\"false\" [innerHTML]=\"item[displayBy] | highlight : tagInput.inputForm.value.value\">\r\n            </span>\r\n            <ng-template *ngSwitchDefault [ngTemplateOutlet]=\"templates.first\" [ngTemplateOutletContext]=\"{ item: item, index: index, last: last }\">\r\n            </ng-template>\r\n        </ng2-menu-item>\r\n    </ng2-dropdown-menu>\r\n</ng2-dropdown>\r\n";
+module.exports = "<ng2-dropdown (onItemClicked)=\"onItemChecked($event)\" >\r\n    <ng2-dropdown-menu [focusFirstElement]=\"focusFirstElement\" [appendToBody]=\"appendToBody\" [offset]=\"offset\">\r\n        <ng2-menu-item [preventClose]=\"true\" *ngFor=\"let item of items; let index = index; let last = last\" [value]=\"item\" [ngSwitch]=\"!!templates.length\">\r\n            <input class=\"styled-checkbox\" type=\"checkbox\" name=\"item[displayBy]\" [(ngModel)]=\"item.checked\">\r\n            <span *ngSwitchCase=\"false\" [innerHTML]=\"item[displayBy] | highlight : tagInput.inputForm.value.value\">\r\n            </span>\r\n            <ng-template *ngSwitchDefault [ngTemplateOutlet]=\"templates.first\" [ngTemplateOutletContext]=\"{ item: item, index: index, last: last }\">\r\n            </ng-template>\r\n        </ng2-menu-item>\r\n    </ng2-dropdown-menu>\r\n</ng2-dropdown>\r\n";
 
 /***/ }),
 /* 51 */

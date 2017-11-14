@@ -1,4 +1,4 @@
-<ng2-dropdown (onItemClicked)="onItemChecked($event)">
+<ng2-dropdown (onItemClicked)="onItemChecked($event)" >
     <ng2-dropdown-menu [focusFirstElement]="focusFirstElement" [appendToBody]="appendToBody" [offset]="offset">
         <ng2-menu-item [preventClose]="true" *ngFor="let item of items; let index = index; let last = last" [value]="item" [ngSwitch]="!!templates.length">
             <input class="styled-checkbox" type="checkbox" name="item[displayBy]" [(ngModel)]="item.checked">

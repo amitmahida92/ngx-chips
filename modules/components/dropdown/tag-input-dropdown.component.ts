@@ -176,12 +176,11 @@ export class TagInputDropdown {
         this.onItemClicked().subscribe(this.requestAdding);
 
         // reset itemsMatching array when the dropdown is hidden
-        // this.onHide().subscribe(this.resetItems);
+        this.onHide().subscribe(this.resetItems);
 
         const DEBOUNCE_TIME = 200;
 
-        this.tagInput
-            .onTextChange
+        this.tagInput.onTextChange
             .debounceTime(DEBOUNCE_TIME)
             .filter((value: string) => {
                 if (this.keepOpen === false) {
@@ -214,6 +213,7 @@ export class TagInputDropdown {
      * @returns {EventEmitter<Ng2Dropdown>}
      */
     public onHide(): EventEmitter<Ng2Dropdown> {
+        this.tagInput.inputText = '';
         return this.dropdown.onHide;
     }
 
@@ -267,14 +267,14 @@ export class TagInputDropdown {
         }
 
         if (this.tagInput.tags.length >= 0) {
-
             this.tagInput.tags.forEach((tag, index) => {
-
                 if (tag.model['checked'] == true) {
                     const checkedItem: any = items.find(x => {
                         return x[this.displayBy] == tag.model[this.displayBy];
                     });
-                    items[items.indexOf(checkedItem)]['checked'] = true;
+                    if (checkedItem !== undefined) {
+                        items[items.indexOf(checkedItem)]['checked'] = true;
+                    }
                 }
             });
         }
@@ -367,6 +367,7 @@ export class TagInputDropdown {
 
         return this.autocompleteItems
             .filter((item: TagModel) => {
+
                 const hasValue: boolean = dupesAllowed ? true : this.tagInput.tags.some(tag => {
                     const identifyBy = this.tagInput.identifyBy;
 
@@ -448,6 +449,5 @@ export class TagInputDropdown {
     onItemChecked(event) {
         event.value.checked = !event.value.checked;
     }
-
 
 }

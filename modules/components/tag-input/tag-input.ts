@@ -657,7 +657,6 @@ export class TagInputComponent extends TagInputAccessor implements OnInit, After
      */
     public blur(): void {
         this.onTouched();
-
         this.onBlur.emit(this.formValue);
     }
 
