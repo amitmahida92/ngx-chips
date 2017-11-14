@@ -2,8 +2,10 @@
     <div class="home-container">
         <div>
             <h3>Tags within an autocomplete component</h3>
-            <tag-input [displayInlineTags]="false" [(ngModel)]="items2" [addOnBlur]="true" [clearOnBlur]="false" [onlyFromAutocomplete]="true">
-                <tag-input-dropdown [autocompleteItems]="autocompleteItems" [showDropdownIfEmpty]="true" [appendToBody]="false">
+            <tag-input [displayInlineTags]="false" [(ngModel)]="items2" [addOnBlur]="true" [clearOnBlur]="false" [onlyFromAutocomplete]="true"
+            [displayBy]="'organisationName'" [identifyBy]="'organisationId'">
+                <tag-input-dropdown [autocompleteItems]="specialists" [showDropdownIfEmpty]="true" [appendToBody]="false"
+                [displayBy]="'organisationName'" [identifyBy]="'organisationId'">
                 </tag-input-dropdown>
             </tag-input>
             <button type="button" (click)="removeItem(item)" *ngFor="let item of items2">{{item}}</button>

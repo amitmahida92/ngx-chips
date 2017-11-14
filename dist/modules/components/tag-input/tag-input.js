@@ -101,6 +101,7 @@ var TagInputComponent = (function (_super) {
             if (index === void 0) { index = _this.items.length; }
             var items = _this.items;
             var model = _this.modelAsStrings ? tag[_this.identifyBy] : tag;
+            model.checked = true;
             _this.items = items.slice(0, index).concat([
                 model
             ], items.slice(index, items.length));
@@ -371,7 +372,7 @@ var TagInputComponent = (function (_super) {
         var _this = this;
         if (fromAutocomplete === void 0) { fromAutocomplete = false; }
         var model = this.getItemDisplay(item);
-        var indexOfModel = this.items.find(function (x) { return x['value'] == model; });
+        var indexOfModel = this.items.find(function (x) { return x[_this.displayBy] == model; });
         if (indexOfModel != undefined) {
             this.removeItem(item, this.items.indexOf(indexOfModel));
             return;

@@ -56,12 +56,13 @@ var TagInputDropdown = (function () {
                 return _this.getItemsFromObservable(value);
             }
             if (!_this.showDropdownIfEmpty && !value) {
+                return _this.dropdown.hide();
             }
-            if (_this.tagInput.tags.length > 0) {
+            if (_this.tagInput.tags.length >= 0) {
                 _this.tagInput.tags.forEach(function (tag, index) {
                     if (tag.model['checked'] == true) {
                         var checkedItem = items.find(function (x) {
-                            return x['value'] == tag.model['value'];
+                            return x[_this.displayBy] == tag.model[_this.displayBy];
                         });
                         items[items.indexOf(checkedItem)]['checked'] = true;
                     }
@@ -72,6 +73,7 @@ var TagInputDropdown = (function () {
                 _this.dropdown.show(position);
             }
             else if (shouldHide) {
+                _this.hide();
             }
         };
         this.requestAdding = function (item) {
@@ -105,11 +107,17 @@ var TagInputDropdown = (function () {
                 return [];
             }
             return items.map(function (item) {
-                return typeof item === 'string' ? (_a = {},
-                    _a[_this.displayBy] = item,
-                    _a[_this.identifyBy] = item,
-                    _a.checked = false,
-                    _a) : item;
+                if (typeof item === 'string') {
+                    return _a = {},
+                        _a[_this.displayBy] = item,
+                        _a[_this.identifyBy] = item,
+                        _a.checked = false,
+                        _a;
+                }
+                else {
+                    item['checked'] = false;
+                    return item;
+                }
                 var _a;
             });
         },

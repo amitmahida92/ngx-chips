@@ -149,11 +149,21 @@ export class TagInputDropdown {
         }
 
         return items.map((item: TagModel) => {
-            return typeof item === 'string' ? {
-                [this.displayBy]: item,
-                [this.identifyBy]: item,
-                checked: false
-            } : item;
+            if (typeof item === 'string') {
+                return {
+                    [this.displayBy]: item,
+                    [this.identifyBy]: item,
+                    checked: false
+                };
+            } else {
+                item['checked'] = false;
+                return item;
+            }
+            // return typeof item === 'string' ? {
+            //     [this.displayBy]: item,
+            //     [this.identifyBy]: item,
+            //     checked: false
+            // } : item;
         });
     }
 
@@ -253,14 +263,16 @@ export class TagInputDropdown {
         }
 
         if (!this.showDropdownIfEmpty && !value) {
-            // return this.dropdown.hide();
+            return this.dropdown.hide();
         }
 
-        if (this.tagInput.tags.length > 0) {
+        if (this.tagInput.tags.length >= 0) {
+
             this.tagInput.tags.forEach((tag, index) => {
+
                 if (tag.model['checked'] == true) {
                     const checkedItem: any = items.find(x => {
-                        return x['value'] == tag.model['value'];
+                        return x[this.displayBy] == tag.model[this.displayBy];
                     });
                     items[items.indexOf(checkedItem)]['checked'] = true;
                 }
@@ -271,7 +283,7 @@ export class TagInputDropdown {
         if (shouldShow) {
             this.dropdown.show(position);
         } else if (shouldHide) {
-            // this.hide();
+            this.hide();
         }
     }
 

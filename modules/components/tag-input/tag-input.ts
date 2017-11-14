@@ -503,6 +503,7 @@ export class TagInputComponent extends TagInputAccessor implements OnInit, After
      * @param tag {TagModel}
      */
     public onAddingRequested(fromAutocomplete: boolean, tag: TagModel, index?: number): void {
+
         if (!tag) {
             return;
         }
@@ -522,9 +523,10 @@ export class TagInputComponent extends TagInputAccessor implements OnInit, After
      * @param tag {TagModel}
      */
     public appendTag = (tag: TagModel, index = this.items.length): void => {
+
         const items = this.items;
         const model = this.modelAsStrings ? tag[this.identifyBy] : tag;
-
+        model.checked = true;
         this.items = [
             ...items.slice(0, index),
             model,
@@ -893,7 +895,8 @@ export class TagInputComponent extends TagInputAccessor implements OnInit, After
      */
     private addItem(fromAutocomplete = false, item: TagModel, index?: number): void {
         const model = this.getItemDisplay(item);
-        const indexOfModel = this.items.find(x => x['value'] == model);
+
+        const indexOfModel = this.items.find(x => x[this.displayBy] == model);
 
         if (indexOfModel != undefined) {
             this.removeItem(item, this.items.indexOf(indexOfModel));
@@ -932,7 +935,6 @@ export class TagInputComponent extends TagInputAccessor implements OnInit, After
          */
         const subscribeFn = (tag: TagModel): void => {
             this.appendTag(tag, index);
-
 
             // emit event
             this.onAdd.emit(tag);
