@@ -17,7 +17,7 @@
            [attr.tabindex]="tabindex"
            [attr.disabled]="disabled ? disabled : null"
 
-           (focus)="onFocus.emit($event)"
+           (focus)="onFocus.emit($event);"
            (blur)="onBlur.emit($event)"
            (keydown)="onKeyDown($event)"
            (keyup)="onKeyup.emit($event)"

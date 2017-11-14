@@ -112,5 +112,5 @@ export declare class TagInputComponent extends TagInputAccessor implements OnIni
     private findDupe(tag, isFromAutocomplete);
     private onPasteCallback;
     private setAnimationMetadata();
-    onInputClick(): void;
+    onInputClick(event: any): void;
 }

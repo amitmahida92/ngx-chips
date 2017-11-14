@@ -477,8 +477,7 @@ var TagInputComponent = (function (_super) {
             params: __assign({}, this.animationDuration)
         };
     };
-    TagInputComponent.prototype.onInputClick = function () {
-        this.inputText = '';
+    TagInputComponent.prototype.onInputClick = function (event) {
         this.dropdown ? this.dropdown.show() : undefined;
     };
     return TagInputComponent;

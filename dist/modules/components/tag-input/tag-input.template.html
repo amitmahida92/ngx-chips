@@ -50,7 +50,7 @@
         <tag-input-form
             (onSubmit)="onAddingRequested(false, formValue)"
             (onBlur)="blur()"
-            (click)="onInputClick()"
+            (click)="onInputClick($event)"
             (onKeydown)="fireEvents('keydown', $event)"
             (onKeyup)="fireEvents('keyup', $event)"
 

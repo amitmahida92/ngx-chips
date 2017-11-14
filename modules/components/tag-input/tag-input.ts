@@ -1084,8 +1084,7 @@ export class TagInputComponent extends TagInputAccessor implements OnInit, After
         };
     }
 
-    onInputClick() {
-        this.inputText = '';
+    onInputClick(event) {
         this.dropdown ? this.dropdown.show() : undefined;
     }
 }
