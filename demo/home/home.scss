@@ -35,3 +35,10 @@ $foundation-icon-theme: (
     @include icon-theme($foundation-icon-theme);
 }
 
+.row {
+    width: 100%;
+}
+.col {
+    width: 50%;
+    float: left;
+}

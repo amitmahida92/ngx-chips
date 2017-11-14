@@ -128,11 +128,11 @@ __decorate([
 ], TagInputForm.prototype, "inputText", null);
 __decorate([
     Input(),
-    __metadata("design:type", String)
+    __metadata("design:type", Object)
 ], TagInputForm.prototype, "tabindex", void 0);
 __decorate([
     Input(),
-    __metadata("design:type", Boolean)
+    __metadata("design:type", Object)
 ], TagInputForm.prototype, "disabled", void 0);
 __decorate([
     ViewChild('input'),

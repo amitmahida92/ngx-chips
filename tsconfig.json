@@ -16,7 +16,7 @@
         "skipLibCheck": true,
         "moduleResolution": "node",
         "rootDir": "",
-        "baseUrl": "",
+        "baseUrl": ".",
         "types": [
             "node",
             "jasmine"
@@ -27,7 +27,7 @@
         ],
         "paths": {
             "modules": ["modules"],
-            "core": ["modules/core"],
+            "core": ["modules/core"],            
             "components": ["modules/components"],
 
             "helpers": ["modules/core/helpers"],

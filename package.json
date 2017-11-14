@@ -16,7 +16,8 @@
         "movehtml": "cpy modules/**/*.html dist --parents",
         "movemetadata": "cpy modules/**/*.metadata.json dist --parents",
         "codecov": "codecov",
-        "clean": "if exist rmdir /S /Q dist && if exist rmdir /S /Q factories",
+        "clean": "if exist rmdir /S /Q dist && if exist rmdir /S /Q factories && del /Q modules/**/*.metadata.json",
+        "clean:dev": "del-cli modules/**/*.metadata.json modules/**/*.d.ts modules/**/*.js modules/**/*.js.map -f",
         "clean:generated": "find modules \\( -name '*.js' -o -name '*.d.ts' -o -name '*.js.map' -o -name '*.metadata.json'  \\) -type f -delete"
     },
     "author": {
@@ -79,6 +80,7 @@
         "zone.js": "0.8.10"
     },
     "dependencies": {
+        "del": "^3.0.0",
         "ng2-material-dropdown": "0.8.0"
     },
     "peerDependencies": {

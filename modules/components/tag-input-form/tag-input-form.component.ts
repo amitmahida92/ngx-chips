@@ -82,12 +82,12 @@ export class TagInputForm {
      * @desc pass through the specified tabindex to the input
      * @type {string}
      */
-    @Input() public tabindex: string = '';
+    @Input() public tabindex = '';
 
     /**
      * @name disabled
      */
-    @Input() public disabled: boolean = false;
+    @Input() public disabled = false;
 
     /**
      * @name inputText
@@ -117,7 +117,7 @@ export class TagInputForm {
     /**
      * @name inputTextValue
      */
-    public inputTextValue: string = '';
+    public inputTextValue = '';
 
     public ngOnInit() {
         // creating form

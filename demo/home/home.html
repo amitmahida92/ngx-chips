@@ -1,16 +1,33 @@
 <main>
     <div class="home-container">
-        <div>
-            <h3>Tags within an autocomplete component</h3>
-            <tag-input [displayInlineTags]="false" [(ngModel)]="items2" [addOnBlur]="true" [clearOnBlur]="true" [onlyFromAutocomplete]="true"
-            [displayBy]="'organisationName'" [identifyBy]="'organisationId'">
-                <tag-input-dropdown [autocompleteItems]="specialists" [showDropdownIfEmpty]="true" [appendToBody]="false"
-                [displayBy]="'organisationName'" [identifyBy]="'organisationId'">
-                </tag-input-dropdown>
-            </tag-input>
-            <button type="button" (click)="removeItem(item)" *ngFor="let item of items2">{{item}}</button>
-            {{items2 | json}}
+        <div class="row">
+            <div class="col">
+                <h3>Tags within an autocomplete component</h3>
+                <tag-input [displayInlineTags]="false" [(ngModel)]="items2" [addOnBlur]="true" [clearOnBlur]="true" [onlyFromAutocomplete]="true"
+                    [displayBy]="'organisationName'" [identifyBy]="'organisationId'">
+                    <tag-input-dropdown [autocompleteItems]="specialists" [showDropdownIfEmpty]="true" [appendToBody]="false" [displayBy]="'organisationName'"
+                        [identifyBy]="'organisationId'">
+                    </tag-input-dropdown>
+                </tag-input>
+                <button type="button" (click)="removeItem(item)" *ngFor="let item of items2">{{item}}</button>
+                {{items2 | json}}
+            </div>
+            <div class="col">
+                <h3>Tags within an autocomplete component</h3>
+                <tag-input [displayInlineTags]="false" [(ngModel)]="items2" [addOnBlur]="true" [clearOnBlur]="true" [onlyFromAutocomplete]="true"
+                    [displayBy]="'organisationName'" [identifyBy]="'organisationId'">
+                    <tag-input-dropdown [autocompleteItems]="specialists" [showDropdownIfEmpty]="true" [appendToBody]="false" [displayBy]="'organisationName'"
+                        [identifyBy]="'organisationId'">
+                    </tag-input-dropdown>
+                </tag-input>
+                <button type="button" (click)="removeItem(item)" *ngFor="let item of items2">{{item}}</button>
+                {{items2 | json}}
+            </div>
         </div>
+
+
+
+
         <div>
             <h3>Simple Input with two items</h3>
             <tag-input [(ngModel)]="items" (onSelect)="onSelect($event)" [modelAsStrings]="true">

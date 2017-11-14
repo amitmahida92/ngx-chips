@@ -38,20 +38,20 @@ import {
     TagModel,
     listen,
     constants
-} from '../../core';
+} from 'core';
 
 import {
     DragProvider,
     DraggedTag,
     OptionsProvider,
     TagInputOptions
-} from '../../core/providers';
+} from 'core';
 
 import {
     TagInputForm,
     TagInputDropdown,
     TagComponent
-} from '../../components';
+} from 'components';
 
 import { animations } from './animations';
 
@@ -1082,5 +1082,10 @@ export class TagInputComponent extends TagInputAccessor implements OnInit, After
             value: 'in',
             params: { ...this.animationDuration }
         };
+    }
+
+    onInputClick() {
+        this.inputText = '';
+        this.dropdown ? this.dropdown.show() : undefined;
     }
 }

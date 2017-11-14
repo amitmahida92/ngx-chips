@@ -32,9 +32,9 @@ import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/map';
-import { TagInputAccessor, listen, constants } from '../../core';
-import { DragProvider, OptionsProvider } from '../../core/providers';
-import { TagInputForm, TagInputDropdown, TagComponent } from '../../components';
+import { TagInputAccessor, listen, constants } from 'core';
+import { DragProvider, OptionsProvider } from 'core';
+import { TagInputForm, TagInputDropdown, TagComponent } from 'components';
 import { animations } from './animations';
 var DragEvent = global.DragEvent;
 var CUSTOM_ACCESSOR = {
@@ -476,6 +476,10 @@ var TagInputComponent = (function (_super) {
             value: 'in',
             params: __assign({}, this.animationDuration)
         };
+    };
+    TagInputComponent.prototype.onInputClick = function () {
+        this.inputText = '';
+        this.dropdown ? this.dropdown.show() : undefined;
     };
     return TagInputComponent;
 }(TagInputAccessor));

@@ -5,8 +5,8 @@ import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/first';
 import 'rxjs/add/operator/debounceTime';
 import { Ng2Dropdown, Ng2MenuItem } from 'ng2-material-dropdown';
-import { TagModel } from '../../core';
-import { TagInputComponent } from '../../components';
+import { TagModel } from 'core';
+import { TagInputComponent } from 'components';
 export declare class TagInputDropdown {
     private readonly injector;
     dropdown: Ng2Dropdown;

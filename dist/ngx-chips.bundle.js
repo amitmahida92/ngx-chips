@@ -7,7 +7,7 @@
 		exports["ngx-chips"] = factory(require("@angular/core"), require("@angular/forms"), require("ng2-material-dropdown"), require("@angular/animations"), require("@angular/common"));
 	else
 		root["ngx-chips"] = factory(root["@angular/core"], root["@angular/forms"], root["ng2-material-dropdown"], root["@angular/animations"], root["@angular/common"]);
-})(this, function(__WEBPACK_EXTERNAL_MODULE_0__, __WEBPACK_EXTERNAL_MODULE_5__, __WEBPACK_EXTERNAL_MODULE_7__, __WEBPACK_EXTERNAL_MODULE_12__, __WEBPACK_EXTERNAL_MODULE_13__) {
+})(this, function(__WEBPACK_EXTERNAL_MODULE_0__, __WEBPACK_EXTERNAL_MODULE_5__, __WEBPACK_EXTERNAL_MODULE_8__, __WEBPACK_EXTERNAL_MODULE_11__, __WEBPACK_EXTERNAL_MODULE_12__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// install a JSONP callback for chunk loading
 /******/ 	var parentJsonpFunction = window["webpackJsonpngx_chips"];
@@ -174,7 +174,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 "use strict";
 
-var root_1 = __webpack_require__(6);
+var root_1 = __webpack_require__(7);
 var toSubscriber_1 = __webpack_require__(76);
 var observable_1 = __webpack_require__(70);
 /**
@@ -677,7 +677,7 @@ var SafeSubscriber = (function (_super) {
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_1__icon__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tag_input_form__ = __webpack_require__(29);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_2__tag_input_form__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__tag__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__tag__ = __webpack_require__(13);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_3__tag__["a"]; });
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "e", function() { return __WEBPACK_IMPORTED_MODULE_3__tag__["b"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__tag_input__ = __webpack_require__(32);
@@ -697,6 +697,30 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_5__;
 
 /***/ }),
 /* 6 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__constants__ = __webpack_require__(9);
+/* harmony reexport (module object) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_0__constants__; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__helpers__ = __webpack_require__(37);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_1__helpers__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pipes__ = __webpack_require__(40);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "f", function() { return __WEBPACK_IMPORTED_MODULE_2__pipes__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__accessor__ = __webpack_require__(36);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_3__accessor__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers__ = __webpack_require__(14);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_4__providers__["a"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "e", function() { return __WEBPACK_IMPORTED_MODULE_4__providers__["b"]; });
+
+
+
+
+
+
+
+
+/***/ }),
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -719,16 +743,16 @@ else {
     })();
 }
 //# sourceMappingURL=root.js.map
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(11)))
-
-/***/ }),
-/* 7 */
-/***/ (function(module, exports) {
-
-module.exports = __WEBPACK_EXTERNAL_MODULE_7__;
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(10)))
 
 /***/ }),
 /* 8 */
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE_8__;
+
+/***/ }),
+/* 9 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -768,44 +792,7 @@ var PREV = 'PREV';
 
 
 /***/ }),
-/* 9 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__constants__ = __webpack_require__(8);
-/* harmony reexport (module object) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__constants__; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__helpers__ = __webpack_require__(37);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_1__helpers__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pipes__ = __webpack_require__(40);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "e", function() { return __WEBPACK_IMPORTED_MODULE_2__pipes__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__accessor__ = __webpack_require__(36);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_3__accessor__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers__ = __webpack_require__(10);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_4__providers__["a"]; });
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "f", function() { return __WEBPACK_IMPORTED_MODULE_4__providers__["b"]; });
-
-
-
-
-
-
-
-
-/***/ }),
 /* 10 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__drag_provider__ = __webpack_require__(41);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_0__drag_provider__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__options_provider__ = __webpack_require__(42);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_1__options_provider__["a"]; });
-
-
-
-
-/***/ }),
-/* 11 */
 /***/ (function(module, exports) {
 
 var g;
@@ -832,6 +819,12 @@ module.exports = g;
 
 
 /***/ }),
+/* 11 */
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE_11__;
+
+/***/ }),
 /* 12 */
 /***/ (function(module, exports) {
 
@@ -839,12 +832,6 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_12__;
 
 /***/ }),
 /* 13 */
-/***/ (function(module, exports) {
-
-module.exports = __WEBPACK_EXTERNAL_MODULE_13__;
-
-/***/ }),
-/* 14 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -852,6 +839,19 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_13__;
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__tag_ripple_component__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__tag_component__ = __webpack_require__(35);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_1__tag_component__["a"]; });
+
+
+
+
+/***/ }),
+/* 14 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__drag_provider__ = __webpack_require__(41);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_0__drag_provider__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__options_provider__ = __webpack_require__(42);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_1__options_provider__["a"]; });
 
 
 
@@ -1108,7 +1108,7 @@ Observable_1.Observable.prototype.map = map_1.map;
 
 "use strict";
 
-var root_1 = __webpack_require__(6);
+var root_1 = __webpack_require__(7);
 var Symbol = root_1.root.Symbol;
 exports.rxSubscriber = (typeof Symbol === 'function' && typeof Symbol.for === 'function') ?
     Symbol.for('rxSubscriber') : '@@rxSubscriber';
@@ -1149,11 +1149,11 @@ exports.isFunction = isFunction;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__angular_core__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__angular_forms__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__angular_common__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ng2_material_dropdown__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ng2_material_dropdown__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ng2_material_dropdown___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_ng2_material_dropdown__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__core__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__core__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components__ = __webpack_require__(4);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TagInputModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1173,11 +1173,11 @@ var COMPONENTS = [
     __WEBPACK_IMPORTED_MODULE_5__components__["b" /* DeleteIconComponent */],
     __WEBPACK_IMPORTED_MODULE_5__components__["c" /* TagInputForm */],
     __WEBPACK_IMPORTED_MODULE_5__components__["e" /* TagComponent */],
-    __WEBPACK_IMPORTED_MODULE_4__core__["e" /* HighlightPipe */],
+    __WEBPACK_IMPORTED_MODULE_4__core__["f" /* HighlightPipe */],
     __WEBPACK_IMPORTED_MODULE_5__components__["a" /* TagInputDropdown */],
     __WEBPACK_IMPORTED_MODULE_5__components__["d" /* TagRipple */]
 ];
-var optionsProvider = new __WEBPACK_IMPORTED_MODULE_4__core__["d" /* OptionsProvider */]();
+var optionsProvider = new __WEBPACK_IMPORTED_MODULE_4__core__["a" /* OptionsProvider */]();
 var TagInputModule = (function () {
     function TagInputModule() {
     }
@@ -1197,7 +1197,7 @@ TagInputModule = __decorate([
         declarations: COMPONENTS,
         exports: COMPONENTS,
         providers: [
-            __WEBPACK_IMPORTED_MODULE_4__core__["f" /* DragProvider */]
+            __WEBPACK_IMPORTED_MODULE_4__core__["e" /* DragProvider */]
         ]
     })
 ], TagInputModule);
@@ -1230,10 +1230,10 @@ TagInputModule = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_first___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_first__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_debounceTime__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_debounceTime___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_debounceTime__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ng2_material_dropdown__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ng2_material_dropdown__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ng2_material_dropdown___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_ng2_material_dropdown__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__core__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_core__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_components__ = __webpack_require__(4);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TagInputDropdown; });
 var __assign = (this && this.__assign) || Object.assign || function(t) {
     for (var s, i = 1, n = arguments.length; i < n; i++) {
@@ -1260,7 +1260,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var defaults = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["forwardRef"])(function () { return __WEBPACK_IMPORTED_MODULE_6__core__["d" /* OptionsProvider */].defaults.dropdown; });
+var defaults = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["forwardRef"])(function () { return __WEBPACK_IMPORTED_MODULE_6_core__["a" /* OptionsProvider */].defaults.dropdown; });
 var TagInputDropdown = (function () {
     function TagInputDropdown(injector) {
         var _this = this;
@@ -1276,7 +1276,7 @@ var TagInputDropdown = (function () {
         this.appendToBody = new defaults().appendToBody;
         this.keepOpen = new defaults().keepOpen;
         this.items = [];
-        this.tagInput = this.injector.get(__WEBPACK_IMPORTED_MODULE_7__components__["f" /* TagInputComponent */]);
+        this.tagInput = this.injector.get(__WEBPACK_IMPORTED_MODULE_7_components__["f" /* TagInputComponent */]);
         this._autocompleteItems = [];
         this.show = function () {
             var value = _this.getFormValue();
@@ -1747,11 +1747,11 @@ __decorate([
 ], TagInputForm.prototype, "inputText", null);
 __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
-    __metadata("design:type", String)
+    __metadata("design:type", Object)
 ], TagInputForm.prototype, "tabindex", void 0);
 __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
-    __metadata("design:type", Boolean)
+    __metadata("design:type", Object)
 ], TagInputForm.prototype, "disabled", void 0);
 __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('input'),
@@ -1776,7 +1776,7 @@ TagInputForm = __decorate([
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_animations__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_animations__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_animations___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__angular_animations__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return animations; });
 
@@ -1837,10 +1837,9 @@ var animations = [
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_filter___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_filter__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_map__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__core__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__core_providers__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__animations__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_core__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_components__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__animations__ = __webpack_require__(31);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TagInputComponent; });
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
@@ -1886,7 +1885,7 @@ var CUSTOM_ACCESSOR = {
     useExisting: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["forwardRef"])(function () { return TagInputComponent; }),
     multi: true
 };
-var defaults = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["forwardRef"])(function () { return __WEBPACK_IMPORTED_MODULE_8__core_providers__["a" /* OptionsProvider */].defaults.tagInput; });
+var defaults = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["forwardRef"])(function () { return __WEBPACK_IMPORTED_MODULE_7_core__["a" /* OptionsProvider */].defaults.tagInput; });
 var TagInputComponent = (function (_super) {
     __extends(TagInputComponent, _super);
     function TagInputComponent(renderer, dragProvider) {
@@ -1936,8 +1935,8 @@ var TagInputComponent = (function (_super) {
         _this.onTagEdited = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         _this.isLoading = false;
         _this.listeners = (_a = {},
-            _a[__WEBPACK_IMPORTED_MODULE_7__core__["a" /* constants */].KEYDOWN] = [],
-            _a[__WEBPACK_IMPORTED_MODULE_7__core__["a" /* constants */].KEYUP] = [],
+            _a[__WEBPACK_IMPORTED_MODULE_7_core__["b" /* constants */].KEYDOWN] = [],
+            _a[__WEBPACK_IMPORTED_MODULE_7_core__["b" /* constants */].KEYUP] = [],
             _a);
         _this.inputTextChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         _this.inputTextValue = '';
@@ -2009,7 +2008,7 @@ var TagInputComponent = (function (_super) {
             this.items.length > this.maxItems;
         if (hasReachedMaxItems) {
             this.maxItems = this.items.length;
-            console.warn(__WEBPACK_IMPORTED_MODULE_7__core__["a" /* constants */].MAX_ITEMS_WARNING);
+            console.warn(__WEBPACK_IMPORTED_MODULE_7_core__["b" /* constants */].MAX_ITEMS_WARNING);
         }
         this.editable = this.onlyFromAutocomplete ? false : this.editable;
         this.setAnimationMetadata();
@@ -2053,21 +2052,21 @@ var TagInputComponent = (function (_super) {
     TagInputComponent.prototype.handleKeydown = function (data) {
         var event = data.event;
         var key = event.keyCode || event.which;
-        switch (__WEBPACK_IMPORTED_MODULE_7__core__["a" /* constants */].KEY_PRESS_ACTIONS[key]) {
-            case __WEBPACK_IMPORTED_MODULE_7__core__["a" /* constants */].ACTIONS_KEYS.DELETE:
+        switch (__WEBPACK_IMPORTED_MODULE_7_core__["b" /* constants */].KEY_PRESS_ACTIONS[key]) {
+            case __WEBPACK_IMPORTED_MODULE_7_core__["b" /* constants */].ACTIONS_KEYS.DELETE:
                 if (this.selectedTag && this.removable) {
                     var index = this.items.indexOf(this.selectedTag);
                     this.onRemoveRequested(this.selectedTag, index);
                 }
                 break;
-            case __WEBPACK_IMPORTED_MODULE_7__core__["a" /* constants */].ACTIONS_KEYS.SWITCH_PREV:
-                this.moveToTag(data.model, __WEBPACK_IMPORTED_MODULE_7__core__["a" /* constants */].PREV);
+            case __WEBPACK_IMPORTED_MODULE_7_core__["b" /* constants */].ACTIONS_KEYS.SWITCH_PREV:
+                this.moveToTag(data.model, __WEBPACK_IMPORTED_MODULE_7_core__["b" /* constants */].PREV);
                 break;
-            case __WEBPACK_IMPORTED_MODULE_7__core__["a" /* constants */].ACTIONS_KEYS.SWITCH_NEXT:
-                this.moveToTag(data.model, __WEBPACK_IMPORTED_MODULE_7__core__["a" /* constants */].NEXT);
+            case __WEBPACK_IMPORTED_MODULE_7_core__["b" /* constants */].ACTIONS_KEYS.SWITCH_NEXT:
+                this.moveToTag(data.model, __WEBPACK_IMPORTED_MODULE_7_core__["b" /* constants */].NEXT);
                 break;
-            case __WEBPACK_IMPORTED_MODULE_7__core__["a" /* constants */].ACTIONS_KEYS.TAB:
-                this.moveToTag(data.model, __WEBPACK_IMPORTED_MODULE_7__core__["a" /* constants */].NEXT);
+            case __WEBPACK_IMPORTED_MODULE_7_core__["b" /* constants */].ACTIONS_KEYS.TAB:
+                this.moveToTag(data.model, __WEBPACK_IMPORTED_MODULE_7_core__["b" /* constants */].NEXT);
                 break;
             default:
                 return;
@@ -2185,13 +2184,13 @@ var TagInputComponent = (function (_super) {
     TagInputComponent.prototype.moveToTag = function (item, direction) {
         var isLast = this.tags.last.model === item;
         var isFirst = this.tags.first.model === item;
-        var stopSwitch = (direction === __WEBPACK_IMPORTED_MODULE_7__core__["a" /* constants */].NEXT && isLast) ||
-            (direction === __WEBPACK_IMPORTED_MODULE_7__core__["a" /* constants */].PREV && isFirst);
+        var stopSwitch = (direction === __WEBPACK_IMPORTED_MODULE_7_core__["b" /* constants */].NEXT && isLast) ||
+            (direction === __WEBPACK_IMPORTED_MODULE_7_core__["b" /* constants */].PREV && isFirst);
         if (stopSwitch) {
             this.focus(true);
             return;
         }
-        var offset = direction === __WEBPACK_IMPORTED_MODULE_7__core__["a" /* constants */].NEXT ? 1 : -1;
+        var offset = direction === __WEBPACK_IMPORTED_MODULE_7_core__["b" /* constants */].NEXT ? 1 : -1;
         var index = this.getTagIndex(item) + offset;
         var tag = this.getTagAtIndex(index);
         return tag.select.call(tag);
@@ -2259,7 +2258,7 @@ var TagInputComponent = (function (_super) {
                 _this.onAddingRequested(false, _this.formValue);
             }
         };
-        __WEBPACK_IMPORTED_MODULE_7__core__["b" /* listen */].call(this, __WEBPACK_IMPORTED_MODULE_7__core__["a" /* constants */].KEYDOWN, listener, useSeparatorKeys);
+        __WEBPACK_IMPORTED_MODULE_7_core__["c" /* listen */].call(this, __WEBPACK_IMPORTED_MODULE_7_core__["b" /* constants */].KEYDOWN, listener, useSeparatorKeys);
     };
     TagInputComponent.prototype.setUpKeypressListeners = function () {
         var _this = this;
@@ -2271,7 +2270,7 @@ var TagInputComponent = (function (_super) {
                 _this.tags.last.select.call(_this.tags.last);
             }
         };
-        __WEBPACK_IMPORTED_MODULE_7__core__["b" /* listen */].call(this, __WEBPACK_IMPORTED_MODULE_7__core__["a" /* constants */].KEYDOWN, listener);
+        __WEBPACK_IMPORTED_MODULE_7_core__["c" /* listen */].call(this, __WEBPACK_IMPORTED_MODULE_7_core__["b" /* constants */].KEYDOWN, listener);
     };
     TagInputComponent.prototype.setUpInputKeydownListeners = function () {
         var _this = this;
@@ -2321,8 +2320,12 @@ var TagInputComponent = (function (_super) {
             params: __assign({}, this.animationDuration)
         };
     };
+    TagInputComponent.prototype.onInputClick = function () {
+        this.inputText = '';
+        this.dropdown ? this.dropdown.show() : undefined;
+    };
     return TagInputComponent;
-}(__WEBPACK_IMPORTED_MODULE_7__core__["c" /* TagInputAccessor */]));
+}(__WEBPACK_IMPORTED_MODULE_7_core__["d" /* TagInputAccessor */]));
 __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
     __metadata("design:type", Object)
@@ -2493,19 +2496,19 @@ __decorate([
     __metadata("design:type", Object)
 ], TagInputComponent.prototype, "onTagEdited", void 0);
 __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ContentChild"])(__WEBPACK_IMPORTED_MODULE_9__components__["a" /* TagInputDropdown */]),
-    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_9__components__["a" /* TagInputDropdown */])
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ContentChild"])(__WEBPACK_IMPORTED_MODULE_8_components__["a" /* TagInputDropdown */]),
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_8_components__["a" /* TagInputDropdown */])
 ], TagInputComponent.prototype, "dropdown", void 0);
 __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ContentChildren"])(__WEBPACK_IMPORTED_MODULE_0__angular_core__["TemplateRef"], { descendants: false }),
     __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["QueryList"])
 ], TagInputComponent.prototype, "templates", void 0);
 __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_9__components__["c" /* TagInputForm */]),
-    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_9__components__["c" /* TagInputForm */])
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_8_components__["c" /* TagInputForm */]),
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_8_components__["c" /* TagInputForm */])
 ], TagInputComponent.prototype, "inputForm", void 0);
 __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChildren"])(__WEBPACK_IMPORTED_MODULE_9__components__["e" /* TagComponent */]),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChildren"])(__WEBPACK_IMPORTED_MODULE_8_components__["e" /* TagComponent */]),
     __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["QueryList"])
 ], TagInputComponent.prototype, "tags", void 0);
 __decorate([
@@ -2523,14 +2526,14 @@ TagInputComponent = __decorate([
         providers: [CUSTOM_ACCESSOR],
         styles: [__webpack_require__(81)],
         template: __webpack_require__(53),
-        animations: __WEBPACK_IMPORTED_MODULE_10__animations__["a" /* animations */]
+        animations: __WEBPACK_IMPORTED_MODULE_9__animations__["a" /* animations */]
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"],
-        __WEBPACK_IMPORTED_MODULE_8__core_providers__["b" /* DragProvider */]])
+        __WEBPACK_IMPORTED_MODULE_7_core__["e" /* DragProvider */]])
 ], TagInputComponent);
 
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(11)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(10)))
 
 /***/ }),
 /* 34 */
@@ -2589,7 +2592,7 @@ TagRipple = __decorate([
 "use strict";
 /* WEBPACK VAR INJECTION */(function(global) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__angular_core__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__tag__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_tag__ = __webpack_require__(13);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TagComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2806,8 +2809,8 @@ __decorate([
     __metadata("design:type", Boolean)
 ], TagComponent.prototype, "moving", void 0);
 __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_1__tag__["a" /* TagRipple */]),
-    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1__tag__["a" /* TagRipple */])
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_1_tag__["a" /* TagRipple */]),
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_tag__["a" /* TagRipple */])
 ], TagComponent.prototype, "ripple", void 0);
 __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"])('keydown', ['$event']),
@@ -2827,7 +2830,7 @@ TagComponent = __decorate([
 ], TagComponent);
 
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(11)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(10)))
 
 /***/ }),
 /* 36 */
@@ -2836,7 +2839,7 @@ TagComponent = __decorate([
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__angular_core__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers__ = __webpack_require__(14);
 /* unused harmony export isObject */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TagInputAccessor; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -2991,7 +2994,7 @@ HighlightPipe = __decorate([
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__angular_core__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__core_constants__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__core_constants__ = __webpack_require__(9);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DragProvider; });
 var __assign = (this && this.__assign) || Object.assign || function(t) {
     for (var s, i = 1, n = arguments.length; i < n; i++) {
@@ -3090,7 +3093,7 @@ OptionsProvider.defaults = __WEBPACK_IMPORTED_MODULE_0__defaults__["a" /* defaul
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__core_constants__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__core_constants__ = __webpack_require__(9);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return defaults; });
 
 var defaults = {
@@ -3264,7 +3267,7 @@ module.exports = "<!-- form -->\r\n<form (submit)=\"submit($event)\" [formGroup]
 /* 53 */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- CONTAINER -->\r\n\r\n<div ngClass=\"ng2-tag-input {{ theme || '' }}\"\r\n     (click)=\"focus(true, false)\"\r\n     [attr.tabindex]=\"-1\"\r\n\r\n     (drop)=\"dragZone ? onTagDropped($event, undefined) : undefined\"\r\n     (dragenter)=\"dragZone ? onDragOver($event) : undefined\"\r\n     (dragover)=\"dragZone ? onDragOver($event) : undefined\"\r\n     (dragend)=\"dragZone ? dragProvider.onDragEnd() : undefined\"\r\n\r\n     [class.ng2-tag-input--dropping]=\"isDropping()\"\r\n     [class.ng2-tag-input--disabled]=\"disable\"\r\n     [class.ng2-tag-input--loading]=\"isLoading\"\r\n     [class.ng2-tag-input--invalid]=\"hasErrors()\"\r\n     [class.ng2-tag-input--focused]=\"isInputFocused()\">\r\n\r\n    <!-- TAGS -->\r\n    <div class=\"ng2-tags-container\">\r\n        <tag [class.hidden]=\"!displayInlineTags\" *ngFor=\"let item of items; let i = index; trackBy: trackBy\"\r\n\r\n             (onSelect)=\"selectItem(item)\"\r\n             (onRemove)=\"onRemoveRequested(item, i)\"\r\n             (onKeyDown)=\"handleKeydown($event, item)\"\r\n             (onTagEdited)=\"onTagEdited.emit($event)\"\r\n             (onBlur)=\"onTagBlurred($event, i)\"\r\n             draggable=\"{{ editable }}\"\r\n\r\n             (dragstart)=\"dragZone ? onDragStarted($event, item, i) : undefined\"\r\n             (drop)=\"dragZone ? onTagDropped($event, i) : undefined\"\r\n             (dragenter)=\"dragZone ? onDragOver($event) : undefined\"\r\n             (dragover)=\"dragZone ? onDragOver($event, i) : undefined\"\r\n             (dragleave)=\"dragZone ? dragProvider.onDragEnd() : undefined\"\r\n\r\n             [hidden]=\"true\"\r\n             [attr.tabindex]=\"0\"\r\n             [disabled]=\"disable\"\r\n             [@animation]=\"animationMetadata\"\r\n             [hasRipple]=\"ripple\"\r\n             [index]=\"i\"\r\n             [removable]=\"removable\"\r\n             [editable]=\"editable\"\r\n             [displayBy]=\"displayBy\"\r\n             [identifyBy]=\"identifyBy\"\r\n             [template]=\"!!hasCustomTemplate() ? templates.first : undefined\"\r\n             [draggable]=\"dragZone\"\r\n             [model]=\"item\">\r\n        </tag>\r\n\r\n        <tag-input-form\r\n            (onSubmit)=\"onAddingRequested(false, formValue)\"\r\n            (onBlur)=\"blur()\"\r\n            (click)=\"dropdown ? dropdown.show() : undefined\"\r\n            (onKeydown)=\"fireEvents('keydown', $event)\"\r\n            (onKeyup)=\"fireEvents('keyup', $event)\"\r\n\r\n            [(inputText)]=\"inputText\"\r\n            [disabled]=\"disable\"\r\n            [validators]=\"validators\"\r\n            [asyncValidators]=\"asyncValidators\"\r\n            [hidden]=\"maxItemsReached\"\r\n            [placeholder]=\"items.length ? placeholder : secondaryPlaceholder\"\r\n            [inputClass]=\"inputClass\"\r\n            [inputId]=\"inputId\"\r\n            [tabindex]=\"tabindex\">\r\n        </tag-input-form>\r\n    </div>\r\n\r\n    <div class=\"progress-bar\" *ngIf=\"isLoading\"></div>\r\n</div>\r\n\r\n<!-- ERRORS -->\r\n<div *ngIf=\"hasErrors()\" class=\"error-messages {{ theme || '' }}\">\r\n    <p *ngFor=\"let error of inputForm.getErrorMessages(errorMessages)\" class=\"error-message\">\r\n        <span>{{ error }}</span>\r\n    </p>\r\n</div>\r\n\r\n<ng-content></ng-content>\r\n";
+module.exports = "<!-- CONTAINER -->\r\n\r\n<div ngClass=\"ng2-tag-input {{ theme || '' }}\"\r\n     (click)=\"focus(true, false)\"\r\n     [attr.tabindex]=\"-1\"\r\n\r\n     (drop)=\"dragZone ? onTagDropped($event, undefined) : undefined\"\r\n     (dragenter)=\"dragZone ? onDragOver($event) : undefined\"\r\n     (dragover)=\"dragZone ? onDragOver($event) : undefined\"\r\n     (dragend)=\"dragZone ? dragProvider.onDragEnd() : undefined\"\r\n\r\n     [class.ng2-tag-input--dropping]=\"isDropping()\"\r\n     [class.ng2-tag-input--disabled]=\"disable\"\r\n     [class.ng2-tag-input--loading]=\"isLoading\"\r\n     [class.ng2-tag-input--invalid]=\"hasErrors()\"\r\n     [class.ng2-tag-input--focused]=\"isInputFocused()\">\r\n\r\n    <!-- TAGS -->\r\n    <div class=\"ng2-tags-container\">\r\n        <tag [class.hidden]=\"!displayInlineTags\" *ngFor=\"let item of items; let i = index; trackBy: trackBy\"\r\n\r\n             (onSelect)=\"selectItem(item)\"\r\n             (onRemove)=\"onRemoveRequested(item, i)\"\r\n             (onKeyDown)=\"handleKeydown($event, item)\"\r\n             (onTagEdited)=\"onTagEdited.emit($event)\"\r\n             (onBlur)=\"onTagBlurred($event, i)\"\r\n             draggable=\"{{ editable }}\"\r\n\r\n             (dragstart)=\"dragZone ? onDragStarted($event, item, i) : undefined\"\r\n             (drop)=\"dragZone ? onTagDropped($event, i) : undefined\"\r\n             (dragenter)=\"dragZone ? onDragOver($event) : undefined\"\r\n             (dragover)=\"dragZone ? onDragOver($event, i) : undefined\"\r\n             (dragleave)=\"dragZone ? dragProvider.onDragEnd() : undefined\"\r\n\r\n             [hidden]=\"true\"\r\n             [attr.tabindex]=\"0\"\r\n             [disabled]=\"disable\"\r\n             [@animation]=\"animationMetadata\"\r\n             [hasRipple]=\"ripple\"\r\n             [index]=\"i\"\r\n             [removable]=\"removable\"\r\n             [editable]=\"editable\"\r\n             [displayBy]=\"displayBy\"\r\n             [identifyBy]=\"identifyBy\"\r\n             [template]=\"!!hasCustomTemplate() ? templates.first : undefined\"\r\n             [draggable]=\"dragZone\"\r\n             [model]=\"item\">\r\n        </tag>\r\n\r\n        <tag-input-form\r\n            (onSubmit)=\"onAddingRequested(false, formValue)\"\r\n            (onBlur)=\"blur()\"\r\n            (click)=\"onInputClick()\"\r\n            (onKeydown)=\"fireEvents('keydown', $event)\"\r\n            (onKeyup)=\"fireEvents('keyup', $event)\"\r\n\r\n            [(inputText)]=\"inputText\"\r\n            [disabled]=\"disable\"\r\n            [validators]=\"validators\"\r\n            [asyncValidators]=\"asyncValidators\"\r\n            [hidden]=\"maxItemsReached\"\r\n            [placeholder]=\"items.length ? placeholder : secondaryPlaceholder\"\r\n            [inputClass]=\"inputClass\"\r\n            [inputId]=\"inputId\"\r\n            [tabindex]=\"tabindex\">\r\n        </tag-input-form>\r\n    </div>\r\n\r\n    <div class=\"progress-bar\" *ngIf=\"isLoading\"></div>\r\n</div>\r\n\r\n<!-- ERRORS -->\r\n<div *ngIf=\"hasErrors()\" class=\"error-messages {{ theme || '' }}\">\r\n    <p *ngFor=\"let error of inputForm.getErrorMessages(errorMessages)\" class=\"error-message\">\r\n        <span>{{ error }}</span>\r\n    </p>\r\n</div>\r\n\r\n<ng-content></ng-content>\r\n";
 
 /***/ }),
 /* 54 */
@@ -4171,7 +4174,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-var root_1 = __webpack_require__(6);
+var root_1 = __webpack_require__(7);
 var Action_1 = __webpack_require__(66);
 /**
  * We need this JSDoc comment for affecting ESDoc.
@@ -4424,7 +4427,7 @@ exports.async = new AsyncScheduler_1.AsyncScheduler(AsyncAction_1.AsyncAction);
 
 "use strict";
 
-var root_1 = __webpack_require__(6);
+var root_1 = __webpack_require__(7);
 function getSymbolObservable(context) {
     var $$observable;
     var Symbol = context.Symbol;

@@ -1,6 +1,6 @@
 import { EventEmitter, TemplateRef, ElementRef, ChangeDetectorRef, Renderer2 } from '@angular/core';
-import { TagModel } from '../../core';
-import { TagRipple } from '../tag';
+import { TagModel } from 'core';
+import { TagRipple } from 'tag';
 export declare class TagComponent {
     element: ElementRef;
     renderer: Renderer2;
