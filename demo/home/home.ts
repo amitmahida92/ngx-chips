@@ -23,8 +23,13 @@ export class Home {
 
     disabled = true;
 
+    resetF = false;
+    reset() {
+        this.resetF = !this.resetF;
+    }
+
     items2;
-    test = 'jcd';
+    test = '';
 
     specialists = [
         {

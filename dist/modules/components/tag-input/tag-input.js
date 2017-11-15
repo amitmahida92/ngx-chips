@@ -25,7 +25,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { Component, forwardRef, HostBinding, Input, Output, EventEmitter, Renderer2, ViewChild, ViewChildren, ContentChildren, ContentChild, TemplateRef, QueryList } from '@angular/core';
+import { Component, forwardRef, HostBinding, Input, Output, EventEmitter, Renderer2, ViewChild, ViewChildren, ContentChildren, ContentChild, TemplateRef, QueryList, ChangeDetectorRef } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
@@ -45,10 +45,11 @@ var CUSTOM_ACCESSOR = {
 var defaults = forwardRef(function () { return OptionsProvider.defaults.tagInput; });
 var TagInputComponent = (function (_super) {
     __extends(TagInputComponent, _super);
-    function TagInputComponent(renderer, dragProvider) {
+    function TagInputComponent(renderer, dragProvider, cdr) {
         var _this = _super.call(this) || this;
         _this.renderer = renderer;
         _this.dragProvider = dragProvider;
+        _this.cdr = cdr;
         _this.displayInlineTags = true;
         _this.separatorKeys = new defaults().separatorKeys;
         _this.separatorKeyCodes = new defaults().separatorKeyCodes;
@@ -129,9 +130,20 @@ var TagInputComponent = (function (_super) {
             return this.inputTextValue;
         },
         set: function (text) {
-            debugger;
             this.inputTextValue = text;
             this.inputTextChange.emit(text);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(TagInputComponent.prototype, "resetInputText", {
+        set: function (value) {
+            var _this = this;
+            this.inputText = '';
+            this.cdr.detectChanges();
+            setTimeout(function () {
+                _this.dropdown.hide();
+            }, 500);
         },
         enumerable: true,
         configurable: true
@@ -590,6 +602,11 @@ __decorate([
 ], TagInputComponent.prototype, "inputText", null);
 __decorate([
     Input(),
+    __metadata("design:type", Boolean),
+    __metadata("design:paramtypes", [Boolean])
+], TagInputComponent.prototype, "resetInputText", null);
+__decorate([
+    Input(),
     __metadata("design:type", Boolean)
 ], TagInputComponent.prototype, "ripple", void 0);
 __decorate([
@@ -686,7 +703,8 @@ TagInputComponent = __decorate([
         animations: animations
     }),
     __metadata("design:paramtypes", [Renderer2,
-        DragProvider])
+        DragProvider,
+        ChangeDetectorRef])
 ], TagInputComponent);
 export { TagInputComponent };
 //# sourceMappingURL=tag-input.js.map

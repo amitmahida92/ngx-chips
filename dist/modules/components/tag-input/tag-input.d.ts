@@ -1,4 +1,4 @@
-import { EventEmitter, Renderer2, OnInit, TemplateRef, QueryList, AfterViewInit } from '@angular/core';
+import { EventEmitter, Renderer2, OnInit, TemplateRef, QueryList, AfterViewInit, ChangeDetectorRef } from '@angular/core';
 import { AsyncValidatorFn, ValidatorFn } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
@@ -11,6 +11,7 @@ import { TagInputForm, TagInputDropdown, TagComponent } from '../../components';
 export declare class TagInputComponent extends TagInputAccessor implements OnInit, AfterViewInit {
     private readonly renderer;
     readonly dragProvider: DragProvider;
+    private cdr;
     displayInlineTags: boolean;
     separatorKeys: string[];
     separatorKeyCodes: number[];
@@ -39,6 +40,7 @@ export declare class TagInputComponent extends TagInputAccessor implements OnIni
     modelAsStrings: boolean;
     trimTags: boolean;
     inputText: string;
+    resetInputText: boolean;
     ripple: boolean;
     tabindex: string;
     disable: boolean;
@@ -72,7 +74,7 @@ export declare class TagInputComponent extends TagInputAccessor implements OnIni
         value: string;
         params: object;
     };
-    constructor(renderer: Renderer2, dragProvider: DragProvider);
+    constructor(renderer: Renderer2, dragProvider: DragProvider, cdr: ChangeDetectorRef);
     ngAfterViewInit(): void;
     ngOnInit(): void;
     onRemoveRequested(tag: TagModel, index: number): void;

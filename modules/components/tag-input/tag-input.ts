@@ -15,8 +15,11 @@ import {
     TemplateRef,
     QueryList,
     AfterViewInit,
-    Type
+    Type,
+    ChangeDetectorRef
 } from '@angular/core';
+
+
 
 import {
     AsyncValidatorFn,
@@ -235,6 +238,14 @@ export class TagInputComponent extends TagInputAccessor implements OnInit, After
         return this.inputTextValue;
     }
 
+    @Input() public set resetInputText(value: boolean) {
+        this.inputText = '';
+        this.cdr.detectChanges();
+        setTimeout(() => {
+            this.dropdown.hide();
+        }, 500);
+    }
+
     /**
      * @name ripple
      * @type {boolean}
@@ -376,7 +387,6 @@ export class TagInputComponent extends TagInputAccessor implements OnInit, After
      * @param text
      */
     public set inputText(text: string) {
-        debugger
         this.inputTextValue = text;
         this.inputTextChange.emit(text);
     }
@@ -427,7 +437,8 @@ export class TagInputComponent extends TagInputAccessor implements OnInit, After
     public animationMetadata: { value: string, params: object };
 
     constructor(private readonly renderer: Renderer2,
-        public readonly dragProvider: DragProvider) {
+        public readonly dragProvider: DragProvider,
+        private cdr: ChangeDetectorRef) {
         super();
     }
 

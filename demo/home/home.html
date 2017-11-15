@@ -3,7 +3,9 @@
         <div class="row">
             <div class="col">
                 <h3>Tags within an autocomplete component</h3>
-                <tag-input [inputText]="test" [displayInlineTags]="false" [(ngModel)]="items2" [addOnBlur]="true" [clearOnBlur]="true" [onlyFromAutocomplete]="true"
+                {{test}}
+                <button type="button" (click)="reset()">Reset</button>
+                <tag-input [resetInputText]="resetF" [displayInlineTags]="false" [(ngModel)]="items2" [addOnBlur]="true" [clearOnBlur]="true" [onlyFromAutocomplete]="true"
                     [displayBy]="'organisationName'" [identifyBy]="'organisationId'">
                     <tag-input-dropdown [autocompleteItems]="specialists" [showDropdownIfEmpty]="true" [appendToBody]="false" [displayBy]="'organisationName'"
                         [identifyBy]="'organisationId'">

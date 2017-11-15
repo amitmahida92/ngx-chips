@@ -1888,10 +1888,11 @@ var CUSTOM_ACCESSOR = {
 var defaults = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["forwardRef"])(function () { return __WEBPACK_IMPORTED_MODULE_8__core_providers__["a" /* OptionsProvider */].defaults.tagInput; });
 var TagInputComponent = (function (_super) {
     __extends(TagInputComponent, _super);
-    function TagInputComponent(renderer, dragProvider) {
+    function TagInputComponent(renderer, dragProvider, cdr) {
         var _this = _super.call(this) || this;
         _this.renderer = renderer;
         _this.dragProvider = dragProvider;
+        _this.cdr = cdr;
         _this.displayInlineTags = true;
         _this.separatorKeys = new defaults().separatorKeys;
         _this.separatorKeyCodes = new defaults().separatorKeyCodes;
@@ -1972,9 +1973,20 @@ var TagInputComponent = (function (_super) {
             return this.inputTextValue;
         },
         set: function (text) {
-            debugger;
             this.inputTextValue = text;
             this.inputTextChange.emit(text);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(TagInputComponent.prototype, "resetInputText", {
+        set: function (value) {
+            var _this = this;
+            this.inputText = '';
+            this.cdr.detectChanges();
+            setTimeout(function () {
+                _this.dropdown.hide();
+            }, 500);
         },
         enumerable: true,
         configurable: true
@@ -2433,6 +2445,11 @@ __decorate([
 ], TagInputComponent.prototype, "inputText", null);
 __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+    __metadata("design:type", Boolean),
+    __metadata("design:paramtypes", [Boolean])
+], TagInputComponent.prototype, "resetInputText", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
     __metadata("design:type", Boolean)
 ], TagInputComponent.prototype, "ripple", void 0);
 __decorate([
@@ -2529,7 +2546,8 @@ TagInputComponent = __decorate([
         animations: __WEBPACK_IMPORTED_MODULE_10__animations__["a" /* animations */]
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"],
-        __WEBPACK_IMPORTED_MODULE_8__core_providers__["b" /* DragProvider */]])
+        __WEBPACK_IMPORTED_MODULE_8__core_providers__["b" /* DragProvider */],
+        __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectorRef"]])
 ], TagInputComponent);
 
 
