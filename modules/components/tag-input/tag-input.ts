@@ -232,7 +232,6 @@ export class TagInputComponent extends TagInputAccessor implements OnInit, After
      * @name inputText
      */
     @Input() public get inputText(): string {
-        debugger
         return this.inputTextValue;
     }
 
