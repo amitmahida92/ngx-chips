@@ -24,6 +24,7 @@ export class Home {
     disabled = true;
 
     items2;
+    test = 'jcd';
 
     specialists = [
         {

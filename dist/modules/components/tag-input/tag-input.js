@@ -126,9 +126,11 @@ var TagInputComponent = (function (_super) {
     }
     Object.defineProperty(TagInputComponent.prototype, "inputText", {
         get: function () {
+            debugger;
             return this.inputTextValue;
         },
         set: function (text) {
+            debugger;
             this.inputTextValue = text;
             this.inputTextChange.emit(text);
         },

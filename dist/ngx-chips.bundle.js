@@ -1393,7 +1393,6 @@ var TagInputDropdown = (function () {
         configurable: true
     });
     TagInputDropdown.prototype.onHide = function () {
-        this.tagInput.inputText = '';
         return this.dropdown.onHide;
     };
     TagInputDropdown.prototype.onItemClicked = function () {
@@ -1970,9 +1969,11 @@ var TagInputComponent = (function (_super) {
     }
     Object.defineProperty(TagInputComponent.prototype, "inputText", {
         get: function () {
+            debugger;
             return this.inputTextValue;
         },
         set: function (text) {
+            debugger;
             this.inputTextValue = text;
             this.inputTextChange.emit(text);
         },

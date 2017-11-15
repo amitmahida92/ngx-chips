@@ -156,7 +156,6 @@ var TagInputDropdown = (function () {
         configurable: true
     });
     TagInputDropdown.prototype.onHide = function () {
-        this.tagInput.inputText = '';
         return this.dropdown.onHide;
     };
     TagInputDropdown.prototype.onItemClicked = function () {

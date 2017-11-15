@@ -3,7 +3,7 @@ import { AbstractControl, AsyncValidatorFn, FormControl, FormGroup, ValidatorFn 
 
 @Component({
     selector: 'tag-input-form',
-    styleUrls: [ './tag-input-form.style.scss' ],
+    styleUrls: ['./tag-input-form.style.scss'],
     templateUrl: './tag-input-form.template.html'
 })
 export class TagInputForm {
@@ -122,7 +122,7 @@ export class TagInputForm {
     public ngOnInit() {
         // creating form
         this.form = new FormGroup({
-            item: new FormControl({value: '', disabled: this.disabled}, this.validators, this.asyncValidators)
+            item: new FormControl({ value: '', disabled: this.disabled }, this.validators, this.asyncValidators)
         });
     }
 

@@ -213,7 +213,6 @@ export class TagInputDropdown {
      * @returns {EventEmitter<Ng2Dropdown>}
      */
     public onHide(): EventEmitter<Ng2Dropdown> {
-        this.tagInput.inputText = '';
         return this.dropdown.onHide;
     }
 
