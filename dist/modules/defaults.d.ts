@@ -52,6 +52,7 @@ export interface TagInputDropdownOptions {
     limitItemsTo: number;
     keepOpen: boolean;
     matchingFn: (value: string, target: TagModel) => boolean;
+    lookUpCallEnabled: boolean;
 }
 export declare const defaults: {
     tagInput: TagInputOptions;

@@ -38,6 +38,7 @@ var TagInputDropdown = (function () {
         this.matchingFn = new defaults().matchingFn;
         this.appendToBody = new defaults().appendToBody;
         this.keepOpen = new defaults().keepOpen;
+        this.lookUpCallEnabled = new defaults().lookUpCallEnabled;
         this.items = [];
         this.tagInput = this.injector.get(TagInputComponent);
         this._autocompleteItems = [];
@@ -117,7 +118,7 @@ var TagInputDropdown = (function () {
                         _a;
                 }
                 else {
-                    item['checked'] = false;
+                    item['checked'] = item['checked'] ? item['checked'] : item['checked'] = false;
                     return item;
                 }
                 var _a;
@@ -205,6 +206,9 @@ var TagInputDropdown = (function () {
         if (!value && !this.showDropdownIfEmpty) {
             return [];
         }
+        if (!value && this.lookUpCallEnabled) {
+            this.autocompleteItems = this.tagInput.items;
+        }
         var dupesAllowed = this.tagInput.allowDupes;
         return this.autocompleteItems
             .filter(function (item) {
@@ -291,6 +295,10 @@ __decorate([
     Input(),
     __metadata("design:type", Object)
 ], TagInputDropdown.prototype, "keepOpen", void 0);
+__decorate([
+    Input(),
+    __metadata("design:type", Object)
+], TagInputDropdown.prototype, "lookUpCallEnabled", void 0);
 __decorate([
     Input(),
     __metadata("design:type", Array),

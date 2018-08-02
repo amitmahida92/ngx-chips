@@ -17,9 +17,8 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 		var moduleId, chunkId, i = 0, resolves = [], result;
 /******/ 		for(;i < chunkIds.length; i++) {
 /******/ 			chunkId = chunkIds[i];
-/******/ 			if(installedChunks[chunkId]) {
+/******/ 			if(installedChunks[chunkId])
 /******/ 				resolves.push(installedChunks[chunkId][0]);
-/******/ 			}
 /******/ 			installedChunks[chunkId] = 0;
 /******/ 		}
 /******/ 		for(moduleId in moreModules) {
@@ -28,9 +27,8 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 			}
 /******/ 		}
 /******/ 		if(parentJsonpFunction) parentJsonpFunction(chunkIds, moreModules, executeModules);
-/******/ 		while(resolves.length) {
+/******/ 		while(resolves.length)
 /******/ 			resolves.shift()();
-/******/ 		}
 /******/ 		if(executeModules) {
 /******/ 			for(i=0; i < executeModules.length; i++) {
 /******/ 				result = __webpack_require__(__webpack_require__.s = executeModules[i]);
@@ -51,9 +49,9 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	function __webpack_require__(moduleId) {
 /******/
 /******/ 		// Check if module is in cache
-/******/ 		if(installedModules[moduleId]) {
+/******/ 		if(installedModules[moduleId])
 /******/ 			return installedModules[moduleId].exports;
-/******/ 		}
+/******/
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = installedModules[moduleId] = {
 /******/ 			i: moduleId,
@@ -74,9 +72,8 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// This file contains only the entry chunk.
 /******/ 	// The chunk loading function for additional chunks
 /******/ 	__webpack_require__.e = function requireEnsure(chunkId) {
-/******/ 		if(installedChunks[chunkId] === 0) {
+/******/ 		if(installedChunks[chunkId] === 0)
 /******/ 			return Promise.resolve();
-/******/ 		}
 /******/
 /******/ 		// a Promise means "currently loading".
 /******/ 		if(installedChunks[chunkId]) {
@@ -109,9 +106,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 			clearTimeout(timeout);
 /******/ 			var chunk = installedChunks[chunkId];
 /******/ 			if(chunk !== 0) {
-/******/ 				if(chunk) {
-/******/ 					chunk[1](new Error('Loading chunk ' + chunkId + ' failed.'));
-/******/ 				}
+/******/ 				if(chunk) chunk[1](new Error('Loading chunk ' + chunkId + ' failed.'));
 /******/ 				installedChunks[chunkId] = undefined;
 /******/ 			}
 /******/ 		};
@@ -1275,6 +1270,7 @@ var TagInputDropdown = (function () {
         this.matchingFn = new defaults().matchingFn;
         this.appendToBody = new defaults().appendToBody;
         this.keepOpen = new defaults().keepOpen;
+        this.lookUpCallEnabled = new defaults().lookUpCallEnabled;
         this.items = [];
         this.tagInput = this.injector.get(__WEBPACK_IMPORTED_MODULE_7__components__["f" /* TagInputComponent */]);
         this._autocompleteItems = [];
@@ -1354,7 +1350,7 @@ var TagInputDropdown = (function () {
                         _a;
                 }
                 else {
-                    item['checked'] = false;
+                    item['checked'] = item['checked'] ? item['checked'] : item['checked'] = false;
                     return item;
                 }
                 var _a;
@@ -1442,6 +1438,9 @@ var TagInputDropdown = (function () {
         if (!value && !this.showDropdownIfEmpty) {
             return [];
         }
+        if (!value && this.lookUpCallEnabled) {
+            this.autocompleteItems = this.tagInput.items;
+        }
         var dupesAllowed = this.tagInput.allowDupes;
         return this.autocompleteItems
             .filter(function (item) {
@@ -1528,6 +1527,10 @@ __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
     __metadata("design:type", Object)
 ], TagInputDropdown.prototype, "keepOpen", void 0);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+    __metadata("design:type", Object)
+], TagInputDropdown.prototype, "lookUpCallEnabled", void 0);
 __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
     __metadata("design:type", Array),

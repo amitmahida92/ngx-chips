@@ -22,6 +22,7 @@ export declare class TagInputDropdown {
     matchingFn: (value: string, target: TagModel) => boolean;
     appendToBody: boolean;
     keepOpen: boolean;
+    lookUpCallEnabled: boolean;
     items: TagModel[];
     tagInput: TagInputComponent;
     private _autocompleteItems;

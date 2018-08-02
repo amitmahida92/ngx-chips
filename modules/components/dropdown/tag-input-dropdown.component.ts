@@ -110,6 +110,13 @@ export class TagInputDropdown {
     @Input() public keepOpen = new defaults().keepOpen;
 
     /**
+  * - desc to disply selected items when we select items with lookup call
+  * @name lookUpCallEnabled
+  * @author Nishit
+  */
+    @Input() public lookUpCallEnabled = new defaults().lookUpCallEnabled;
+
+    /**
      * list of items that match the current value of the input (for autocomplete)
      * @name items
      * @type {TagModel[]}
@@ -156,7 +163,8 @@ export class TagInputDropdown {
                     checked: false
                 };
             } else {
-                item['checked'] = false;
+               //  item['checked'] = false;
+                item['checked'] = item['checked'] ? item['checked'] : item['checked'] = false;
                 return item;
             }
             // return typeof item === 'string' ? {
@@ -361,7 +369,10 @@ export class TagInputDropdown {
         if (!value && !this.showDropdownIfEmpty) {
             return [];
         }
-
+        // New property added by Nishit
+        if (!value && this.lookUpCallEnabled) {
+            this.autocompleteItems = this.tagInput.items.filter(item => item['checked']);
+        }
         const dupesAllowed = this.tagInput.allowDupes;
 
         return this.autocompleteItems
