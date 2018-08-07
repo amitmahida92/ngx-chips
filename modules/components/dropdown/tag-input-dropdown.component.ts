@@ -150,7 +150,7 @@ export class TagInputDropdown {
      */
     @Input() public get autocompleteItems(): TagModel[] {
         const items = this._autocompleteItems;
-
+        const selectedItems = this.tagInput.items || [];
         if (!items) {
             return [];
         }
@@ -163,8 +163,14 @@ export class TagInputDropdown {
                     checked: false
                 };
             } else {
-               //  item['checked'] = false;
-                item['checked'] = item['checked'] ? item['checked'] : item['checked'] = false;
+                //  item['checked'] = false;
+
+                if (this.lookUpCallEnabled) {
+                    item['checked'] = item['checked'] ? item['checked'] : item['checked'] = false;
+                } else {
+                    const checkUsername = obj => obj.code === item.code;
+                    item['checked'] = selectedItems.some(checkUsername)['checked'] || false;
+                }
                 return item;
             }
             // return typeof item === 'string' ? {

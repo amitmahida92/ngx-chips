@@ -106,6 +106,7 @@ var TagInputDropdown = (function () {
         get: function () {
             var _this = this;
             var items = this._autocompleteItems;
+            var selectedItems = this.tagInput.items || [];
             if (!items) {
                 return [];
             }
@@ -118,7 +119,13 @@ var TagInputDropdown = (function () {
                         _a;
                 }
                 else {
-                    item['checked'] = item['checked'] ? item['checked'] : item['checked'] = false;
+                    if (_this.lookUpCallEnabled) {
+                        item['checked'] = item['checked'] ? item['checked'] : item['checked'] = false;
+                    }
+                    else {
+                        var checkUsername = function (obj) { return obj.code === item.code; };
+                        item['checked'] = selectedItems.some(checkUsername)['checked'] || false;
+                    }
                     return item;
                 }
                 var _a;
@@ -207,7 +214,7 @@ var TagInputDropdown = (function () {
             return [];
         }
         if (!value && this.lookUpCallEnabled) {
-            this.autocompleteItems = this.tagInput.items;
+            this.autocompleteItems = this.tagInput.items.filter(function (item) { return item['checked']; });
         }
         var dupesAllowed = this.tagInput.allowDupes;
         return this.autocompleteItems
